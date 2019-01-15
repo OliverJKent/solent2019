@@ -145,13 +145,6 @@ div#region-main-box {
     min-height: -moz-available;
 }
 
-/* box on front page containing a login form and link to registration page */
-.frontpage_box {
-  background-color: #F4F4F4;
-  border-radius: 5px;
-  padding: 20px;
-}
-
 .footer_list {
   list-style-type: none;
 }
@@ -194,11 +187,27 @@ span.login {
   }
 }
 
+@media (min-width: 768px) {
+  a.brand.shortname {
+    display: none;
+  }
+}
+
+a.brand.shortname {
+    font-size: 12pt;
+    line-height: 12pt;
+    color: #333;
+    margin-left: 0;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
 /* onetopic */
-.tab_content {
+/* .tab_content {
     color: white;
     border-radius: 10px 10px 0px 0px;
-}
+} */
 
 /* onetopic */
 a.nav-link.active div {
