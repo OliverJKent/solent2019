@@ -1,8 +1,3 @@
-/* The header should not begin behind the navbar  */
-header {
-    margin-top: 80px;
-}
-
 /* dropdown menus */
 a.ssu-nav-dropdown {
  color: #5c5757!important;
@@ -147,7 +142,7 @@ a#dropdown-0 {
 /* the main content should always fully overlap the footer */
 div#region-main-box {
     min-height: -webkit-fill-available;
-    min-height: -moz-available; 
+    min-height: -moz-available;
 }
 
 /* box on front page containing a login form and link to registration page */
