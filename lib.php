@@ -158,7 +158,7 @@ function theme_solent2019_get_pre_scss($theme) {
 }
 
 // SSU_AMEND START - ADD SECTIONS DROPDOWN
-function solent_number_of_sections(){
+function solent_number_of_images(){
 	global $CFG, $COURSE,$PAGE, $USER, $DB;
 	if ($PAGE->user_is_editing()){
 // 		$i = 1;

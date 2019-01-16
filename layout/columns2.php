@@ -48,7 +48,7 @@ if($PAGE->pagelayout == 'course'){
 }
 
 
-$sections = solent_number_of_sections();
+$sections = solent_number_of_images();
 $bodyattributes = $OUTPUT->body_attributes($extraclasses);
 $blockshtml = $OUTPUT->blocks('side-pre');
 $hasblocks = strpos($blockshtml, 'data-block=') !== false;

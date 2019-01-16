@@ -142,7 +142,7 @@ a#dropdown-0 {
 /* the main content should always fully overlap the footer */
 div#region-main-box {
     min-height: -webkit-fill-available;
-    min-height: -moz-available;
+    /* min-height: -moz-available; */
 }
 
 .footer_list {
@@ -277,7 +277,7 @@ footer#page-footer {
     width: 100%;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1150px) {
   footer#page-footer {
       position: relative;
     }
