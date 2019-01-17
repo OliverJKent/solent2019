@@ -14,3 +14,8 @@
     margin-top: 30px;
     text-align: center;
 }
+
+/* drag and drop prompt should not be hidden behind the navbar */
+#dndupload-status {
+  margin-top: 80px;
+}
