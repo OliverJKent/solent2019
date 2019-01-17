@@ -1,0 +1,12 @@
+/* This file is required for compatability with Moodle 3.5 */
+
+
+img.empty-placeholder-image-sm {
+    max-width: 200px;
+}
+
+#page-header .card-body, #page-header .card {
+    background: #F4F4F4;
+    border: none;
+    padding: 0;
+}
