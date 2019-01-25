@@ -1,17 +1,39 @@
-/* This file is required for compatability with Moodle 3.5 */
+/* This file should be removed if using Moodle 3.6 or higher */
 
-
-img.empty-placeholder-image-sm {
-    max-width: 200px;
-}
-
+/* removes unnecessary white space from dashboard */
 #page-header .card-body, #page-header .card {
     background: #F4F4F4;
     border: none;
     padding: 0;
 }
 
-/* remove mobile app link form footer */
+/* removes mobile app link from footer */
 a[href="https://download.moodle.org/mobile?version=2018051702.14&lang=en&iosappid=633359593&androidappid=com.moodle.moodlemobile"] {
+    display: none;
+}
+
+/* adds an outline to the course sorting options on the dashboard */
+[data-region="courses-view"] .nav-link {
+  width: 130px;
+  text-align: center;
+  border-color: #DFDFDF;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 0px !important;
+  margin-left: 0px !important;
+}
+
+[data-region="timeline-view"] .nav-link {
+  width: 140px;
+  text-align: center;
+  border-color: #DFDFDF;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 0px !important;
+  margin-left: 0px !important;
+}
+
+/* Removes profile image from dashboard */
+#page-header img.userpicture.defaultuserpic {
     display: none;
 }

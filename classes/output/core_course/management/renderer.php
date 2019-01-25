@@ -28,9 +28,9 @@ defined('MOODLE_INTERNAL') || die();
 require_once($CFG->dirroot . "/course/classes/management_renderer.php");
 
 use html_writer;
-use core_course_category;
+use coursecat;
 use moodle_url;
-use core_course_list_element;
+use course_in_list;
 use lang_string;
 use context_system;
 use stdClass;
@@ -103,10 +103,10 @@ class renderer extends \core_course_management_renderer {
     /**
      * Renderers detailed course information.
      *
-     * @param core_course_list_element $course The course to display details for.
+     * @param course_in_list $course The course to display details for.
      * @return string
      */
-    public function course_detail(core_course_list_element $course) {
+    public function course_detail(course_in_list $course) {
         $details = \core_course\management\helper::get_course_detail_array($course);
         $fullname = $details['fullname']['value'];
 
@@ -184,10 +184,10 @@ class renderer extends \core_course_management_renderer {
     /**
      * Presents a course category listing.
      *
-     * @param core_course_category $category The currently selected category. Also the category to highlight in the listing.
+     * @param coursecat $category The currently selected category. Also the category to highlight in the listing.
      * @return string
      */
-    public function category_listing(core_course_category $category = null) {
+    public function category_listing(coursecat $category = null) {
 
         if ($category === null) {
             $selectedparents = array();
@@ -201,7 +201,7 @@ class renderer extends \core_course_management_renderer {
         $catatlevel[] = array_shift($selectedparents);
         $catatlevel = array_unique($catatlevel);
 
-        $listing = core_course_category::get(0)->get_children();
+        $listing = coursecat::get(0)->get_children();
 
         $attributes = array(
             'class' => 'ml-1 list-unstyled',
@@ -241,14 +241,14 @@ class renderer extends \core_course_management_renderer {
      *
      * This function gets called recursively to render sub categories.
      *
-     * @param core_course_category $category The category to render as listitem.
-     * @param core_course_category[] $subcategories The subcategories belonging to the category being rented.
+     * @param coursecat $category The category to render as listitem.
+     * @param coursecat[] $subcategories The subcategories belonging to the category being rented.
      * @param int $totalsubcategories The total number of sub categories.
      * @param int $selectedcategory The currently selected category
      * @param int[] $selectedcategories The path to the selected category and its ID.
      * @return string
      */
-    public function category_listitem(core_course_category $category, array $subcategories, $totalsubcategories,
+    public function category_listitem(coursecat $category, array $subcategories, $totalsubcategories,
                                       $selectedcategory = null, $selectedcategories = array()) {
 
         $isexpandable = ($totalsubcategories > 0);
@@ -383,23 +383,23 @@ class renderer extends \core_course_management_renderer {
      * These are not the actions associated with an individual category listing.
      * That happens through category_listitem_actions.
      *
-     * @param core_course_category $category
+     * @param coursecat $category
      * @return string
      */
-    public function category_listing_actions(core_course_category $category = null) {
+    public function category_listing_actions(coursecat $category = null) {
         $actions = array();
 
         $cancreatecategory = $category && $category->can_create_subcategory();
-        $cancreatecategory = $cancreatecategory || core_course_category::can_create_top_level_category();
+        $cancreatecategory = $cancreatecategory || coursecat::can_create_top_level_category();
         if ($category === null) {
-            $category = core_course_category::get(0);
+            $category = coursecat::get(0);
         }
 
         if ($cancreatecategory) {
             $url = new moodle_url('/course/editcategory.php', array('parent' => $category->id));
             $actions[] = html_writer::link($url, get_string('createnewcategory'), array('class' => 'btn btn-default'));
         }
-        if (core_course_category::can_approve_course_requests()) {
+        if (coursecat::can_approve_course_requests()) {
             $actions[] = html_writer::link(new moodle_url('/course/pending.php'), get_string('coursespending'));
         }
         if (count($actions) === 0) {
@@ -411,14 +411,14 @@ class renderer extends \core_course_management_renderer {
     /**
      * Renders a course listing.
      *
-     * @param core_course_category $category The currently selected category. This is what the listing is focused on.
-     * @param core_course_list_element $course The currently selected course.
+     * @param coursecat $category The currently selected category. This is what the listing is focused on.
+     * @param course_in_list $course The currently selected course.
      * @param int $page The page being displayed.
      * @param int $perpage The number of courses to display per page.
      * @param string|null $viewmode The view mode the page is in, one out of 'default', 'combined', 'courses' or 'categories'.
      * @return string
      */
-    public function course_listing(core_course_category $category = null, core_course_list_element $course = null,
+    public function course_listing(coursecat $category = null, course_in_list $course = null,
             $page = 0, $perpage = 20, $viewmode = 'default') {
 
         if ($category === null) {
@@ -479,12 +479,12 @@ class renderer extends \core_course_management_renderer {
      *
      * This function will be called for every course being displayed by course_listing.
      *
-     * @param core_course_category $category The currently selected category and the category the course belongs to.
-     * @param core_course_list_element $course The course to produce HTML for.
+     * @param coursecat $category The currently selected category and the category the course belongs to.
+     * @param course_in_list $course The course to produce HTML for.
      * @param int $selectedcourse The id of the currently selected course.
      * @return string
      */
-    public function course_listitem(core_course_category $category, core_course_list_element $course, $selectedcourse) {
+    public function course_listitem(coursecat $category, course_in_list $course, $selectedcourse) {
 
         $text = $course->get_formatted_name();
         $attributes = array(
@@ -537,12 +537,12 @@ class renderer extends \core_course_management_renderer {
      *
      * Not to be confused with course_listitem_actions which renderers the actions for individual courses.
      *
-     * @param core_course_category $category
-     * @param core_course_list_element $course The currently selected course.
+     * @param coursecat $category
+     * @param course_in_list $course The currently selected course.
      * @param int $perpage
      * @return string
      */
-    public function course_listing_actions(core_course_category $category, core_course_list_element $course = null, $perpage = 20) {
+    public function course_listing_actions(coursecat $category, course_in_list $course = null, $perpage = 20) {
         $actions = array();
         if ($category->can_create_course()) {
             $url = new moodle_url('/course/edit.php', array('category' => $category->id, 'returnto' => 'catmanage'));
@@ -618,13 +618,13 @@ class renderer extends \core_course_management_renderer {
      *
      * @param array $courses The courses to display.
      * @param int $totalcourses The total number of courses to display.
-     * @param core_course_list_element $course The currently selected course if there is one.
+     * @param course_in_list $course The currently selected course if there is one.
      * @param int $page The current page, starting at 0.
      * @param int $perpage The number of courses to display per page.
      * @param string $search The string we are searching for.
      * @return string
      */
-    public function search_listing(array $courses, $totalcourses, core_course_list_element $course = null, $page = 0, $perpage = 20,
+    public function search_listing(array $courses, $totalcourses, course_in_list $course = null, $page = 0, $perpage = 20,
         $search = '') {
         $page = max($page, 0);
         $perpage = max($perpage, 2);
@@ -666,11 +666,11 @@ class renderer extends \core_course_management_renderer {
      *
      * This function will be called for every course being displayed by course_listing.
      *
-     * @param core_course_list_element $course The course to produce HTML for.
+     * @param course_in_list $course The course to produce HTML for.
      * @param int $selectedcourse The id of the currently selected course.
      * @return string
      */
-    public function search_listitem(core_course_list_element $course, $selectedcourse) {
+    public function search_listitem(course_in_list $course, $selectedcourse) {
 
         $text = $course->get_formatted_name();
         $attributes = array(
@@ -680,7 +680,7 @@ class renderer extends \core_course_management_renderer {
             'data-visible' => $course->visible ? '1' : '0'
         );
         $bulkcourseinput = '';
-        if (core_course_category::get($course->category)->can_move_courses_out_of()) {
+        if (coursecat::get($course->category)->can_move_courses_out_of()) {
             $bulkcourseinput = array(
                 'type' => 'checkbox',
                 'name' => 'bc[]',
@@ -691,7 +691,7 @@ class renderer extends \core_course_management_renderer {
             );
         }
         $viewcourseurl = new moodle_url($this->page->url, array('courseid' => $course->id));
-        $categoryname = core_course_category::get($course->category)->get_formatted_name();
+        $categoryname = coursecat::get($course->category)->get_formatted_name();
 
         $html  = html_writer::start_tag('li', $attributes);
         $html .= html_writer::start_div('clearfix');
@@ -730,10 +730,10 @@ class renderer extends \core_course_management_renderer {
     /**
      * A collection of actions for a course.
      *
-     * @param core_course_list_element $course The course to display actions for.
+     * @param course_in_list $course The course to display actions for.
      * @return string
      */
-    public function course_detail_actions(core_course_list_element $course) {
+    public function course_detail_actions(course_in_list $course) {
         $actions = \core_course\management\helper::get_course_detail_actions($course);
         if (empty($actions)) {
             return '';

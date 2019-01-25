@@ -5,5 +5,32 @@
     Example context (json): {}
 }}
 <div id="nav-drawer" data-region="drawer" class="d-print-none moodle-has-zindex {{^navdraweropen}}closed{{/navdraweropen}}" aria-hidden="{{#navdraweropen}}false{{/navdraweropen}}{{^navdraweropen}}true{{/navdraweropen}}" tabindex="-1">
-    {{> theme_solent2019/flat_navigation }}
+<form class="search-input-form" action="http://localhost/search/index.php"><label for="id_q_5c4896411e7e3" class="accesshide">Enter your search query</label><input type="text" style="width:70%" name="q" placeholder="Search" size="13" tabindex="-1"
+    class="form-control"><input type="submit" style="width:30%; padding-left:2%; padding-right:2%" class="btn btn-secondary" name="submitbutton" id="id_submitbutton" value="Submit"></form>
+    <br>
+<!-- <nav class="navigation">
+  <ul class="mainmenu">
+    <li><a href="">Home</a></li>
+    <li><a href="">About</a></li>
+    <li>Products
+      <ul class="submenu">
+        <li>Tops
+          <ul class="sub-submenu">
+            <li><a href="">White Tops</a></li>
+            <li><a href="">Black Tops</a></li>
+          </ul>
+        </li>
+        <li><a href="">Bottoms</a></li>
+        <li><a href="">Footwear</a></li>
+      </ul>
+    </li>
+    <li><a href="">Contact us</a>
+      <ul class="submenu">
+        <li><a href="">Email</a></li>
+    </li>
+  </ul>
+</nav>
+<br> -->
+
+     {{> theme_solent2019/flat_navigation }}
 </div>

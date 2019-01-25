@@ -56,18 +56,15 @@
 
     {{{ output.standard_top_of_body_html }}}
 
-    {{> theme_solent2019/navbar }}
+    {{>theme_solent2019/navbar}}
 
     <div id="page" class="container-fluid">
       {{{ header }}}
+    <div class='final_header_content'>
+      {{{mobile_course_header}}}
+    </div>
       {{{sections}}}
-      {{#settingsmenu}}
-        <div class="context-header-settings-menu">
-            {{{settingsmenu}}}
-        </div>
-        {{/settingsmenu}}
-
-        <div id="page-content" class="row pb-3">
+        <div id="page-content" class="row">
             <div id="region-main-box" class="col-12">
                 {{#hasregionmainsettingsmenu}}
                 <div id="region-main-settings-menu" class="d-print-none {{#hasblocks}}has-blocks{{/hasblocks}}">
@@ -75,15 +72,17 @@
                 </div>
                 {{/hasregionmainsettingsmenu}}
                 <section id="region-main" {{#hasblocks}}class="has-blocks mb-3"{{/hasblocks}}>
-
-                    {{#hasregionmainsettingsmenu}}
-                        <div class="region_main_settings_menu_proxy"></div>
-                    {{/hasregionmainsettingsmenu}}
-                    {{{ output.course_content_header }}}
-                    {{{ output.main_content }}}
-                    {{{ output.activity_navigation }}}
-                    {{{ output.course_content_footer }}}
-
+                    <div class="card">
+                        <div class="card-body">
+                            {{#hasregionmainsettingsmenu}}
+                                <div class="region_main_settings_menu_proxy"></div>
+                            {{/hasregionmainsettingsmenu}}
+                            {{{ output.course_content_header }}}
+                            {{{ output.main_content }}}
+                            {{{ output.activity_navigation }}}
+                            {{{ output.course_content_footer }}}
+                        </div>
+                    </div>
                 </section>
                 {{#hasblocks}}
                 <section data-region="blocks-column" class="d-print-none">
@@ -93,10 +92,10 @@
             </div>
         </div>
     </div>
-    {{{ output.standard_after_main_region_html }}}
     {{> theme_solent2019/nav-drawer }}
-    {{> theme_solent2019/footer }}
 </div>
+
+{{> theme_solent2019/footer }}
 
 </body>
 </html>

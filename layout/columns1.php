@@ -33,3 +33,4 @@ $templatecontext = [
 ];
 
 echo $OUTPUT->render_from_template('theme_solent2019/columns1', $templatecontext);
+

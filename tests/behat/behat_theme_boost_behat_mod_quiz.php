@@ -45,8 +45,7 @@ class behat_theme_solent2019_behat_mod_quiz extends behat_mod_quiz {
 
         $this->execute('behat_general::click_link', $quizname);
 
-        $this->execute("behat_navigation::i_navigate_to_in_current_page_administration",
-                $quizadmin . ' > ' . $editquiz);
+        $this->execute("behat_navigation::i_navigate_to_node_in", array($editquiz, $quizadmin));
 
         if ($this->running_javascript()) {
             $this->execute("behat_action_menu::i_open_the_action_menu_in", array('.slots', "css_element"));

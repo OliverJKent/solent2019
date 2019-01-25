@@ -27,7 +27,7 @@ defined('MOODLE_INTERNAL') || die();
 require_once(__DIR__ . '/lib.php');
 
 $THEME->name = 'solent2019';
-$THEME->sheets = ['main', 'unit-header', 'course', '3.5_only_styles'];
+$THEME->sheets = ['main', 'course', 'navbar', 'unit-header', '3.5_only_styles'];
 $THEME->editor_sheets = [];
 $THEME->usefallback = true;
 $THEME->scss = function($theme) {
@@ -82,7 +82,7 @@ $THEME->layouts = [
         'file' => 'columns2.php',
         'regions' => array('side-pre'),
         'defaultregion' => 'side-pre',
-        'options' => array('nonavbar' => true, 'langmenu' => true, 'nocontextheader' => true),
+        'options' => array('nonavbar' => true, 'langmenu' => true),
     ),
     // My public page.
     'mypublic' => array(

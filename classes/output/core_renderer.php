@@ -31,6 +31,7 @@ use preferences_groups;
 use action_menu;
 use help_icon;
 use single_button;
+use paging_bar;
 use context_course;
 use pix_icon;
 
@@ -81,6 +82,69 @@ class core_renderer extends \core_renderer {
         $header->courseheader = $this->course_header();
         return $this->render_from_template('theme_solent2019/header', $header);
     }
+
+    //SSU_AMMEND START
+        public function full_header_ssu() {
+          global $COURSE, $DB, $PAGE;
+          $header = new stdClass();
+
+          $opt = $DB->get_record('theme_header', array('course' => $COURSE->id), '*');
+          if($opt){
+            $opt = $opt->opt;
+          }else{
+            $record = new stdclass;
+            $record->id = null;
+            $record->course = $COURSE->id;
+
+            //global $CFG;
+          //  require_once($CFG->libdir.'/coursecatlib.php');
+            //require_once('/lib/coursecatlib.php');
+          //  $currentcategory = coursecat::get($COURSE->category, IGNORE_MISSING);
+          $currentcategory = $DB->get_record('course_categories', array('id' => $COURSE->category), '*');
+          $catname = strtolower('x'.$currentcategory->name);
+          if(isset($catname)){
+            if(strpos($catname, 'course pages') !== false){
+                $record->opt = '08';
+                $DB->insert_record('theme_header', $record, $returnid=true);
+                $opt = '08';
+              }else{
+                $record->opt = '01';
+                $DB->insert_record('theme_header', $record, $returnid=true);
+                $opt = '01';
+              }
+            }
+          }
+
+            $settings = get_config('theme_solent2019');
+
+            $html = html_writer::start_tag('header', array('id'=>'page-header-unit', 'class'=>'clearfix'));
+            $html .= $this->context_header();
+            // if($COURSE->id == $settings->teach || $COURSE->id == $settings->succeed){
+            // $html .= html_writer::start_div('clearfix', array('id'=>'page-navbar-unit', 'class'=>'tts'));
+            // }else{
+             $html .= html_writer::start_div('clearfix', array('id'=>'page-navbar-unit', 'class'=>'opt'.$opt));
+            // }
+            $html .= html_writer::start_div('unit_title_container');
+            $coursenamearray = explode("(Start", $COURSE->fullname, 2);
+            $coursename = $coursenamearray[0];
+            $html .= html_writer::start_div('unit_title') . $coursename . html_writer::end_div();
+            $html .= html_writer::end_div();
+            $html .= html_writer::end_div();
+            $html .= html_writer::end_tag('header');
+            return $html;
+          }
+
+        // public function breadcrumbs_ssu() {
+        //   $html = html_writer::start_tag('header', array('id' => 'page-header-crumbs', 'class' => 'clearfix'));
+        //       $html .= $this->context_header();
+        //       $html .= html_writer::start_div('clearfix', array('id' => 'page-navbar'));
+        //       $html .= html_writer::tag('div', $this->navbar(), array('class' => 'breadcrumb-nav'));
+        //   $html .= html_writer::div($this->page_heading_button(), 'breadcrumb-button');
+        //       $html .= html_writer::end_tag('header');
+        //       return $html;
+        // }
+    //SSU_AMMEND END
+
 
     /**
      * The standard tags that should be included in the <head> tag
@@ -136,70 +200,6 @@ class core_renderer extends \core_renderer {
 
         return parent::context_header($headerinfo, $headinglevel);
     }
-
-    //SSU_AMMEND START
-        public function full_header_ssu() {
-          global $COURSE, $DB, $PAGE;
-          $header = new stdClass();
-
-          $opt = $DB->get_record('theme_header', array('course' => $COURSE->id), '*');
-          if($opt){
-            $opt = $opt->opt;
-          }else{
-            $record = new stdclass;
-            $record->id = null;
-            $record->course = $COURSE->id;
-
-            //global $CFG;
-          //  require_once($CFG->libdir.'/coursecatlib.php');
-            //require_once('/lib/coursecatlib.php');
-          //  $currentcategory = coursecat::get($COURSE->category, IGNORE_MISSING);
-          $currentcategory = $DB->get_record('course_categories', array('id' => $COURSE->category), '*');
-          $catname = strtolower('x'.$currentcategory->name);
-          if(isset($catname)){
-            if(strpos($catname, 'course pages') !== false){
-                $record->opt = '08';
-                $DB->insert_record('theme_header', $record, $returnid=true);
-                $opt = '08';
-              }else{
-                $record->opt = '01';
-                $DB->insert_record('theme_header', $record, $returnid=true);
-                $opt = '01';
-              }
-            }
-          }
-
-            $settings = get_config('theme_solent2019');
-
-            $html = html_writer::start_tag('header', array('id'=>'page-header-unit', 'class'=>'clearfix'));
-            $html .= $this->context_header();
-            // if($COURSE->id == $settings->teach || $COURSE->id == $settings->succeed){
-            // $html .= html_writer::start_div('clearfix', array('id'=>'page-navbar-unit', 'class'=>'tts'));
-            // }else{
-             $html .= html_writer::start_div('clearfix', array('id'=>'page-navbar-unit', 'class'=>'opt'.$opt));
-            // }
-            $html .= html_writer::start_div('unit_title_container');
-            $coursenamearray = explode("(Start", $COURSE->fullname, 2);
-            $coursename = $coursenamearray[0];
-            $html .= html_writer::start_div('unit_title') . $coursename . html_writer::end_div();
-            $html .= html_writer::end_div();
-            $html .= $this->context_header_settings_menu();
-            $html .= html_writer::end_div();
-            $html .= html_writer::end_tag('header');
-            return $html;
-          }
-
-        // public function breadcrumbs_ssu() {
-        //   $html = html_writer::start_tag('header', array('id' => 'page-header-crumbs', 'class' => 'clearfix'));
-        //       $html .= $this->context_header();
-        //       $html .= html_writer::start_div('clearfix', array('id' => 'page-navbar'));
-        //       $html .= html_writer::tag('div', $this->navbar(), array('class' => 'breadcrumb-nav'));
-        //   $html .= html_writer::div($this->page_heading_button(), 'breadcrumb-button');
-        //       $html .= html_writer::end_tag('header');
-        //       return $html;
-        // }
-    //SSU_AMMEND END
-
 
     /**
      * Get the compact logo URL.
@@ -481,22 +481,30 @@ class core_renderer extends \core_renderer {
     }
 
     /**
+     * Renders a paging bar.
+     *
+     * @param paging_bar $pagingbar The object.
+     * @return string HTML
+     */
+    protected function render_paging_bar(paging_bar $pagingbar) {
+        // Any more than 10 is not usable and causes wierd wrapping of the pagination in this theme.
+        $pagingbar->maxdisplay = 10;
+        return $this->render_from_template('core/paging_bar', $pagingbar->export_for_template($this));
+    }
+
+    /**
      * Renders the login form.
      *
      * @param \core_auth\output\login $form The renderable.
      * @return string
      */
     public function render_login(\core_auth\output\login $form) {
-        global $CFG, $SITE;
+        global $SITE;
 
         $context = $form->export_for_template($this);
 
         // Override because rendering is not supported in template yet.
-        if ($CFG->rememberusername == 0) {
-            $context->cookieshelpiconformatted = $this->help_icon('cookiesenabledonlysession');
-        } else {
-            $context->cookieshelpiconformatted = $this->help_icon('cookiesenabled');
-        }
+        $context->cookieshelpiconformatted = $this->help_icon('cookiesenabled');
         $context->errorformatted = $this->error_text($context->error);
         $url = $this->get_logo_url();
         if ($url) {

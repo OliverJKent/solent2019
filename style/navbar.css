@@ -1,0 +1,179 @@
+@media (max-width: 1300px) {
+    .navbar-brand {
+      display: none !important;
+    }
+}
+
+@media (min-width: 1300px) {
+  a.brand.shortname {
+    display: none;
+    }
+  }
+
+@media (max-width: 850px) {
+  .navbar .navbar-nav.d-none.d-md-flex {
+    display: none !important;
+  }
+
+  .navbar .nav.navbar-nav.ml-auto {
+    margin-left: auto !important;
+  }
+
+}
+
+@media (max-width: 375px) {
+  .usermenu .dropdown {
+    max-width: 44px;
+  }
+
+  .nav-link i.icon.fa.fa-comment.fa-fw {
+    margin-left: 4px;
+  }
+
+  .usermenu .action-menu-trigger {
+    margin-left: 15px;
+  }
+
+  div#nav-notification-popover-container {
+    margin: 0;
+  }
+
+  .navbar .popover-region {
+    margin-right: 0px;
+  }
+
+}
+
+@media (max-width: 355px) {
+
+  i.icon.fa.fa-comment.fa-fw {
+    margin-left: 9px !important;
+  }
+
+  div#nav-notification-popover-container {
+    margin: 0;
+  }
+
+  .popover-region-toggle.nav-link {
+    padding-left: 0 !important;
+  }
+
+  .usermenu {
+    width: 51px;
+  }
+
+  .navbar .popover-region {
+    margin-right: 10px;
+  }
+
+}
+
+a.brand.shortname {
+    font-size: 10pt;
+    line-height: 11pt;
+    color: #333;
+    margin-left: 0;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+/* keeps messages and notifications box underneath navbar  */
+.popover-region-container {
+    margin-top: 35px;
+}
+
+/* Removes search icon from navbar when search is enabled */
+.search-input-wrapper {
+    display: none;
+}
+
+.navbar-nav .icon {
+    font-size: 25px;
+    opacity: .7;
+}
+
+.nav-link i.icon.fa.fa-comment.fa-fw {
+    margin-left: 11px;
+}
+
+.usermenu .action-menu-trigger {
+    margin-left: 30px;
+}
+
+li.dropdown.nav-item {
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+a.nav-link.dropdown-underline {
+    color: rgb(87,87,87) !important;
+}
+
+.search-input-wrapper {
+    overflow: visible;
+}
+
+.search-input-wrapper>div .icon {
+    margin-top: 8px;
+}
+
+/* navbar dropdown menus toggle on mouseover */
+.dropdown.nav-item:hover > .dropdown-menu {
+    display: block;
+}
+
+.dropdown-toggle.nav-link {
+    padding: 0 !important
+}
+
+a.dropdown-underline::before {
+    content: "";
+    position: absolute;
+    width: auto;
+    height: 3px;
+    bottom: 25px;
+    left: 8px;
+    right: 8px;
+    background-color: #e20613;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+span.usertext::before {
+    content: "";
+    position: absolute;
+    height: 3px;
+    bottom: 6px;
+    left: 0px;
+    right: 67px;
+    background-color: #e20613;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.usermenu .dropdown-toggle {
+    text-decoration: none;
+    cursor: pointer;
+    width: calc(100% - 9px);
+    display: block;
+    overflow: hidden;
+}
+
+.usermenu .dropdown-menu {
+    margin-top: 21px;
+}
+
+a.dropdown-item:hover {
+    background-color: #202020 !important;
+}
+
+.dropdown-item:hover {
+    background-color: #202020;
+}

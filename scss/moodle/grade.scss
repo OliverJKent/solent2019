@@ -35,13 +35,9 @@
     #region-main {
         min-width: 100%;
         width: auto;
-        display: inline-flex;
         & > .card {
             width: auto;
             overflow-x: initial;
-        }
-        div[role="main"] {
-            flex: 1 1 auto;
         }
     }
     [data-region="blocks-column"] {
@@ -363,7 +359,7 @@
 /**
  * Grader report.
  */
-.path-grade-report-grader {
+.path-grade-report {
     .gradeparent {
         table {
             @include border-radius($border-radius);
