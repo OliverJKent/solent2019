@@ -57,7 +57,7 @@ span.site-name.d-none.d-md-inline {
 
 /* search input bar  */
 input.form-control {
-    display: initial;
+    display: inline;
     border-color: #E9ECEF;
 }
 
