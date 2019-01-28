@@ -78,6 +78,11 @@ a.brand.shortname {
     text-decoration: none;
 }
 
+.navbar.fixed-top .dropdown .dropdown-menu {
+    max-height: unset !important;
+    overflow-y: unset !important;
+}
+
 /* Replacement for the submenu class that was removed in Bootstrap 4  */
 .dropdown-submenu {
     position: relative;
