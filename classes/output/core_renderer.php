@@ -292,38 +292,128 @@ class core_renderer extends \core_renderer {
      *
      * This renderer is needed to enable the Bootstrap style navigation.
      */
+    // protected function render_custom_menu(custom_menu $menu) {
+    //     global $CFG;
+    //
+    //     $langs = get_string_manager()->get_list_of_translations();
+    //     $haslangmenu = $this->lang_menu() != '';
+    //
+    //     if (!$menu->has_children() && !$haslangmenu) {
+    //         return '';
+    //     }
+    //
+    //     if ($haslangmenu) {
+    //         $strlang = get_string('language');
+    //         $currentlang = current_language();
+    //         if (isset($langs[$currentlang])) {
+    //             $currentlang = $langs[$currentlang];
+    //         } else {
+    //             $currentlang = $strlang;
+    //         }
+    //         $this->language = $menu->add($currentlang, new moodle_url('#'), $strlang, 10000);
+    //         foreach ($langs as $langtype => $langname) {
+    //             $this->language->add($langname, new moodle_url($this->page->url, array('lang' => $langtype)), $langname);
+    //         }
+    //     }
+    //
+    //     $content = '';
+    //     foreach ($menu->get_children() as $item) {
+    //         $context = $item->export_for_template($this);
+    //         $content .= $this->render_from_template('core/custom_menu_item', $context);
+    //     }
+    //
+    //     return $content;
+    // }
     protected function render_custom_menu(custom_menu $menu) {
-        global $CFG;
+    global $CFG;
 
-        $langs = get_string_manager()->get_list_of_translations();
-        $haslangmenu = $this->lang_menu() != '';
+    $langs = get_string_manager()->get_list_of_translations();
+    $haslangmenu = $this->lang_menu() != '';
 
-        if (!$menu->has_children() && !$haslangmenu) {
-            return '';
-        }
-
-        if ($haslangmenu) {
-            $strlang = get_string('language');
-            $currentlang = current_language();
-            if (isset($langs[$currentlang])) {
-                $currentlang = $langs[$currentlang];
-            } else {
-                $currentlang = $strlang;
-            }
-            $this->language = $menu->add($currentlang, new moodle_url('#'), $strlang, 10000);
-            foreach ($langs as $langtype => $langname) {
-                $this->language->add($langname, new moodle_url($this->page->url, array('lang' => $langtype)), $langname);
-            }
-        }
-
-        $content = '';
-        foreach ($menu->get_children() as $item) {
-            $context = $item->export_for_template($this);
-            $content .= $this->render_from_template('core/custom_menu_item', $context);
-        }
-
-        return $content;
+    if (!$menu->has_children() && !$haslangmenu) {
+        return '';
     }
+
+    if ($haslangmenu) {
+        $strlang =  get_string('language');
+        $currentlang = current_language();
+        if (isset($langs[$currentlang])) {
+            $currentlang = $langs[$currentlang];
+        } else {
+            $currentlang = $strlang;
+        }
+        $this->language = $menu->add($currentlang, new moodle_url(''), $strlang, 10000);
+        foreach ($langs as $langtype => $langname) {
+            $this->language->add($langname, new moodle_url($this->page->url, array('lang' => $langtype)), $langname);
+        }
+    }
+
+    $content = '<ul class="nav">';
+    foreach ($menu->get_children() as $item) {
+        $content .= $this->render_custom_menu_item($item, 1);
+    }
+
+    return $content.'</ul>';
+}
+
+    protected function render_custom_menu_item(custom_menu_item $menunode, $level = 0 ) {
+    static $submenucount = 0;
+
+    $content = '';
+    if ($menunode->has_children()) {
+
+        if ($level == 1) {
+            $class = 'dropdown nav-item';
+        } else {
+            $class = 'dropdown-submenu';
+        }
+
+        if ($menunode === $this->language) {
+            $class .= ' langmenu';
+        }
+        $content = html_writer::start_tag('li', array('class' => $class));
+        // If the child has menus render it as a sub menu.
+        $submenucount++;
+        if ($menunode->get_url() !== null) {
+            $url = $menunode->get_url();
+        } else {
+            $url = '#cm_submenu_'.$submenucount;
+        }
+        if ($level == 1) {
+          $content .= html_writer::start_tag('a', array('href'=>$url, 'class'=>'dropdown-underline nav-link', 'data-toggle'=>'dropdown', 'title'=>$menunode->get_title()));
+        }  else {
+          $content .= html_writer::start_tag('a', array('href'=>$url, 'class'=>'dropdown-item', 'data-toggle'=>'dropdown', 'title'=>$menunode->get_title()));
+
+          }
+        $content .= $menunode->get_text();
+        if ($level == 1) {
+            $content .= '<b class="caret"></b>';
+        }
+        $content .= '</a>';
+        $content .= '<ul class="dropdown-menu">';
+        foreach ($menunode->get_children() as $menunode) {
+            $content .= $this->render_custom_menu_item($menunode, 0);
+        }
+        $content .= '</ul>';
+    } else {
+        // The node doesn't have children so produce a final menuitem.
+        // Also, if the node's text matches '####', add a class so we can treat it as a divider.
+        if (preg_match("/^#+$/", $menunode->get_text())) {
+            // This is a divider.
+            $content = '<li class="divider">&nbsp;</li>';
+        } else {
+            $content = '<li class="dropdown-item">';
+            if ($menunode->get_url() !== null) {
+                $url = $menunode->get_url();
+            } else {
+                $url = '#';
+            }
+            $content .= html_writer::link($url, $menunode->get_text(), array('title' => $menunode->get_title()));
+            $content .= '</li>';
+        }
+    }
+    return $content;
+}
 
     /**
      * This code renders the navbar button to control the display of the custom menu

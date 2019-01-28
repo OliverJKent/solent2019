@@ -78,6 +78,20 @@ a.brand.shortname {
     text-decoration: none;
 }
 
+/* Replacement for the submenu class that was removed in Bootstrap 4  */
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu > .dropdown-menu {
+    top: -2px;
+    right: 100%;
+    left: inherit;
+}
+
+.dropdown-submenu:hover > .dropdown-menu {
+    display: block;
+}
 /* keeps messages and notifications box underneath navbar  */
 .popover-region-container {
     margin-top: 35px;
