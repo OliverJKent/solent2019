@@ -1,14 +1,4 @@
-/* dropdown menus */
-a.ssu-nav-dropdown {
- color: #5c5757!important;
-margin-right: 25px!important;
-}
 
-.dropdown-menu, a.dropdown-item {
-background-color: #33373C !important;
-color: white !important;
-margin-top: 0;
-}
 
 
 body {
