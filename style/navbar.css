@@ -141,6 +141,10 @@ li.dropdown.nav-item {
     margin-right: 6px;
 }
 
+li.dropdown-item a {
+    text-decoration: none;
+}
+
 a.nav-link.dropdown-underline {
     color: rgb(87,87,87) !important;
 }
