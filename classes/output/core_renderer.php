@@ -259,33 +259,33 @@ class core_renderer extends \core_renderer {
      * We want to show the custom menus as a list of links in the footer on small screens.
      * Just return the menu object exported so we can render it differently.
      */
-    // public function custom_menu_flat() {
-    //     global $CFG;
-    //     $custommenuitems = '';
-    //
-    //     if (empty($custommenuitems) && !empty($CFG->custommenuitems)) {
-    //         $custommenuitems = $CFG->custommenuitems;
-    //     }
-    //     $custommenu = new custom_menu($custommenuitems, current_language());
-    //     $langs = get_string_manager()->get_list_of_translations();
-    //     $haslangmenu = $this->lang_menu() != '';
-    //
-    //     if ($haslangmenu) {
-    //         $strlang = get_string('language');
-    //         $currentlang = current_language();
-    //         if (isset($langs[$currentlang])) {
-    //             $currentlang = $langs[$currentlang];
-    //         } else {
-    //             $currentlang = $strlang;
-    //         }
-    //         $this->language = $custommenu->add($currentlang, new moodle_url('#'), $strlang, 10000);
-    //         foreach ($langs as $langtype => $langname) {
-    //             $this->language->add($langname, new moodle_url($this->page->url, array('lang' => $langtype)), $langname);
-    //         }
-    //     }
-    //
-    //     return $custommenu->export_for_template($this);
-    // }
+    public function custom_menu_flat() {
+        global $CFG;
+        $custommenuitems = '';
+
+        if (empty($custommenuitems) && !empty($CFG->custommenuitems)) {
+            $custommenuitems = $CFG->custommenuitems;
+        }
+        $custommenu = new custom_menu($custommenuitems, current_language());
+        $langs = get_string_manager()->get_list_of_translations();
+        $haslangmenu = $this->lang_menu() != '';
+
+        if ($haslangmenu) {
+            $strlang = get_string('language');
+            $currentlang = current_language();
+            if (isset($langs[$currentlang])) {
+                $currentlang = $langs[$currentlang];
+            } else {
+                $currentlang = $strlang;
+            }
+            $this->language = $custommenu->add($currentlang, new moodle_url('#'), $strlang, 10000);
+            foreach ($langs as $langtype => $langname) {
+                $this->language->add($langname, new moodle_url($this->page->url, array('lang' => $langtype)), $langname);
+            }
+        }
+
+        return $custommenu->export_for_template($this);
+    }
 
     /*
      * This renders the bootstrap top menu.
@@ -382,7 +382,7 @@ class core_renderer extends \core_renderer {
         if ($level == 1) {
           $content .= html_writer::start_tag('a', array('href'=>$url, 'class'=>'dropdown-underline nav-link', 'data-toggle'=>'dropdown', 'title'=>$menunode->get_title()));
         }  else {
-          $content .= html_writer::start_tag('a', array('href'=>$url, 'class'=>'dropdown-item', 'data-toggle'=>'dropdown', 'title'=>$menunode->get_title()));
+          $content .= html_writer::start_tag('a', array('href'=>$url, 'class'=>'dropdown-item dropdown-toggle', 'data-toggle'=>'dropdown', 'title'=>$menunode->get_title()));
 
           }
         $content .= $menunode->get_text();
