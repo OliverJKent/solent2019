@@ -79,10 +79,6 @@ a.dropdown-underline:hover::before, span.usertext:hover::before{
   transform: scaleX(1);
 }
 
-li.dropdown.nav-item {
-    height: 80px;
-}
-
 .navbar-dropdown {
   right: 0;
   left: auto;
@@ -91,10 +87,6 @@ li.dropdown.nav-item {
 
 .dropdown-underline {
     margin-top: 20px;
-}
-
-li.dropdown.nav-item {
-    height: 80px !important;
 }
 
 #nav-drawer {
