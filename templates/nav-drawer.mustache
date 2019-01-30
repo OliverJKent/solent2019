@@ -1,0 +1,17 @@
+{{!
+    @template theme_solent2019/nav-drawer
+
+
+    Example context (json): {}
+}}
+<div id="nav-drawer" data-region="drawer" class="d-print-none moodle-has-zindex {{^navdraweropen}}closed{{/navdraweropen}}" aria-hidden="{{#navdraweropen}}false{{/navdraweropen}}{{^navdraweropen}}true{{/navdraweropen}}" tabindex="-1">
+<form class="search-input-form" action="http://localhost/search/index.php"><label for="id_q_5c4896411e7e3" class="accesshide">Enter your search query</label><input type="text" style="width:70%" name="q" placeholder="Search" size="13" tabindex="-1"
+    class="form-control"><input type="submit" style="width:30%; padding-left:2%; padding-right:2%" class="btn btn-secondary" name="submitbutton" id="id_submitbutton" value="Submit"></form>
+    <br>
+<!-- <div class='mobile-links'>
+{{{ output.custom_menu }}}
+<br>
+</div> -->
+
+     {{> theme_solent2019/flat_navigation }}
+</div>

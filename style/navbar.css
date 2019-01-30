@@ -1,0 +1,318 @@
+/* Mobile dropdown menus */
+/* @media (max-width: 979px) {
+  .mobile-links .nav .dropdown-menu {
+      position: static !important;
+      top: auto;
+      left: auto;
+      float: none;
+      display: none;
+      max-width: none;
+      margin: 0 15px;
+      padding: 0;
+      background-color: transparent !important;
+      border: none;
+  }
+
+  .show {
+    max-height: 2000px !important;
+  }
+
+  .dropdown-item:hover, .dropdown-submenu:hover {
+    background-color: rgba(0,0,0,.125) !important;
+  }
+
+  .mobile-links .dropdown-menu {
+  display: block !important;
+  overflow: hidden;
+  max-height: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  }
+
+  .nav {
+    display: inherit;
+  }
+
+  li.dropdown-item {
+    white-space: normal;
+  }
+
+  li.dropdown.nav-item {
+      height: inherit !important;
+      margin: 0 !important;
+  }
+
+  li.dropdown-item a, li.dropdown-submenu a {
+    color: #575757!important;
+  }
+
+  a.dropdown-item, li.dropdown-submenu a {
+    background-color: transparent !important;
+    color: #575757!important;
+  }
+
+  ul.dropdown-menu {
+    transform: none !important;
+  }
+
+  a.nav-link {
+    border: 1px solid rgba(0,0,0,.125);
+    margin-top: -1px;
+  }
+
+  li.dropdown-submenu a {
+    white-space: normal;
+  }
+
+  .show {
+    background-image: none !important;
+  }
+
+  .dropdown-submenu {
+    background-image: url(https://www.solent.ac.uk/site-elements/images/icons/chevron-down-black.svg);
+    background-repeat: no-repeat;
+    background-size: 6%;
+    background-position: 100% 55%;
+  }
+
+  a.nav-link.dropdown-underline {
+    background-image: url(https://www.solent.ac.uk/site-elements/images/icons/chevron-down-black.svg);
+    background-repeat: no-repeat;
+    background-size: 6%;
+    background-position: 96% 49%;
+  }
+
+  a.dropdown-underline::before {
+    background-color: transparent !important;
+  }
+
+  .mobile-links {
+    display: block !important;
+  }
+} */
+
+input#dropdown-selector{
+  display: none;
+}
+
+@media (max-width: 1300px) {
+    .navbar-brand {
+      display: none !important;
+    }
+}
+
+@media (min-width: 1300px) {
+  a.brand.shortname {
+    display: none;
+    }
+  }
+
+@media (max-width: 850px) {
+  .navbar .navbar-nav.d-none.d-md-flex {
+    display: none !important;
+  }
+
+  .navbar .nav.navbar-nav.ml-auto {
+    margin-left: auto !important;
+  }
+
+}
+
+@media (max-width: 375px) {
+  .usermenu .dropdown {
+    max-width: 44px;
+  }
+
+  .nav-link i.icon.fa.fa-comment.fa-fw {
+    margin-left: 4px;
+  }
+
+  .usermenu .action-menu-trigger {
+    margin-left: 15px;
+  }
+
+  div#nav-notification-popover-container {
+    margin: 0;
+  }
+
+  .navbar .popover-region {
+    margin-right: 0px;
+  }
+
+}
+
+@media (max-width: 355px) {
+
+  i.icon.fa.fa-comment.fa-fw {
+    margin-left: 9px !important;
+  }
+
+  div#nav-notification-popover-container {
+    margin: 0;
+  }
+
+  .popover-region-toggle.nav-link {
+    padding-left: 0 !important;
+  }
+
+  .usermenu {
+    width: 51px;
+  }
+
+  .navbar .popover-region {
+    margin-right: 10px;
+  }
+
+}
+
+.mobile-links {
+  display: none;
+}
+
+.dropdown-menu {
+  right: 0;
+  left: inherit !important;
+}
+
+li.dropdown.nav-item {
+    height: 80px;
+}
+
+.dropdown-menu, a.dropdown-item {
+background-color: #33373C !important;
+color: white !important;
+margin-top: 0;
+}
+
+a.brand.shortname {
+    font-size: 10pt;
+    line-height: 11pt;
+    color: #333;
+    margin-left: 0;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.navbar.fixed-top .dropdown .dropdown-menu {
+    max-height: unset !important;
+    overflow-y: unset !important;
+}
+
+/* Replacement for the submenu class that was removed in Bootstrap 4  */
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu > .dropdown-menu {
+    top: -2px;
+    right: 100% !important;
+    left: inherit;
+}
+
+.dropdown-submenu:hover > .dropdown-menu {
+    display: block;
+}
+/* keeps messages and notifications box underneath navbar  */
+.popover-region-container {
+    margin-top: 35px;
+}
+
+/* Removes search icon from navbar when search is enabled */
+.search-input-wrapper {
+    display: none;
+}
+
+.navbar-nav .icon {
+    font-size: 25px;
+    opacity: .7;
+}
+
+.nav-link i.icon.fa.fa-comment.fa-fw {
+    margin-left: 11px;
+}
+
+.usermenu .action-menu-trigger {
+    margin-left: 30px;
+}
+
+li.dropdown.nav-item {
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+li.dropdown-item a {
+    text-decoration: none;
+}
+
+a.nav-link.dropdown-underline {
+    color: rgb(87,87,87) !important;
+}
+
+.search-input-wrapper {
+    overflow: visible;
+}
+
+.search-input-wrapper>div .icon {
+    margin-top: 8px;
+}
+
+/* navbar dropdown menus toggle on mouseover */
+.dropdown.nav-item:hover > .dropdown-menu {
+    display: block;
+}
+
+.dropdown-toggle.nav-link {
+    padding: 0 !important
+}
+
+a.dropdown-underline::before {
+    content: "";
+    position: absolute;
+    width: auto;
+    height: 3px;
+    bottom: 25px;
+    left: 8px;
+    right: 8px;
+    background-color: #e20613;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+span.usertext::before {
+    content: "";
+    position: absolute;
+    height: 3px;
+    bottom: 6px;
+    left: 0px;
+    right: 67px;
+    background-color: #e20613;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.usermenu .dropdown-toggle {
+    text-decoration: none;
+    cursor: pointer;
+    width: calc(100% - 9px);
+    display: block;
+    overflow: hidden;
+}
+
+.usermenu .dropdown-menu {
+    margin-top: 21px;
+}
+
+a.dropdown-item:hover {
+    background-color: #202020 !important;
+}
+
+.dropdown-item:hover {
+    background-color: #202020;
+}

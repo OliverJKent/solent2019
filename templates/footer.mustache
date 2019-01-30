@@ -1,0 +1,108 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    Page footer.
+}}
+<footer id="page-footer" class="py-3 bg-dark text-light">
+    <div class="container">
+        <div id="course-footer">{{{ output.course_footer }}}</div>
+
+        {{# output.page_doc_link }}
+            <p class="helplink">{{{ output.page_doc_link }}}</p>
+        {{/ output.page_doc_link }}
+
+        {{{ output.login_info }}}
+        <div class="tool_usertours-resettourcontainer"></div>
+        {{{ output.home_link }}}
+        <nav class="nav navbar-nav d-md-none">
+            {{# output.custom_menu_flat }}
+                <ul class="list-unstyled pt-3">
+                    {{> theme_solent2019/custom_menu_footer }}
+                </ul>
+            {{/ output.custom_menu_flat }}
+        </nav>
+        {{{ output.standard_footer_html }}}
+        {{{ output.standard_end_of_body_html }}}
+        <div class="row">
+	<div class="col-lg col-md col-sm-12">
+		<h3 class="footer__title footer__item nav__item footer_list">STUDY</h3>
+		<ul class="vertical footer_list">
+			<li><a class="footer__item nav__item" href="https://learn.solent.ac.uk/course/view.php?id=90">Succeed@Solent</a></li>
+			<li><a class="footer__item nav__item" href="http://learn.solent.ac.uk/succeed/referencing" target="_blank">Referencing</a></li>
+			<li><a class="footer__item nav__item" href="http://portal.solent.ac.uk/library/studying/subject-guides/subject-guides.aspx" target="_blank">Subject Guides</a></li>
+			<li><a class="footer__item nav__item" href="http://portal.solent.ac.uk/library/" target="_blank">Library</a></li>
+			<li><a class="footer__item nav__item" href="http://portal.solent.ac.uk/research-and-innovation/ethics/ethics.aspx" target="_blank">Ethics</a></li>
+		</ul>
+	</div>
+	<div class="col-lg col-md col-sm-12">
+		<h3 class="footer__title footer__item nav__item footer_list">ORGANISE</h3>
+		<ul class="vertical footer_list">
+			<li><a class="footer__item nav__item" href="http://email.solent.ac.uk" target="_blank">Email</a></li>
+			<li><a class="footer__item nav__item" href="https://timetable.solent.ac.uk/" target="_blank">Timetables</a></li>
+			<li><a class="footer__item nav__item" href="http://portal.solent.ac.uk/support/official-documents/term-dates/term-dates.aspx" target="_blank">Term Dates</a></li>
+			<li><a class="footer__item nav__item" href="http://portal.solent.ac.uk/" target="_blank">Portal</a></li>
+		</ul>
+	</div>
+	<div class="col-lg col-md col-sm-12">
+		<h3 class="footer__title footer__item nav__item footer_list">SUPPORT</h3>
+		<ul class="vertical footer_list">
+			<li><a class="footer__item nav__item" href="http://portal.solent.ac.uk/support/" target="_blank">Student Hub</a></li>
+			<li><a class="footer__item nav__item" href="http://portal.solent.ac.uk/it-and-media/it-and-media.aspx" target="_blank">IT & Media</a></li>
+			<li><a class="footer__item nav__item" href="http://portal.solent.ac.uk/it-and-media/print-service/print-service.aspx" target="_blank">Printing</a></li>
+			<li><a class="footer__item nav__item" href="http://portal.solent.ac.uk/support/official-documents/information-for-students/extenuating-circumstances/extenuating-circumstances.aspx" target="_blank">Extenuating Circumstances</a></li>
+		</ul>
+	</div>
+	<div class="col-lg col-md col-sm-12">
+		<h3 class="footer__title footer__item nav__item footer_list">SOLENT FUTURES</h3>
+		<ul class="vertical footer_list">
+			<li><a class="footer__item nav__item" href="https://solentfutures.careercentre.me/" target="_blank">Solent Futures Online</a></li>
+			<li><a class="footer__item nav__item" href="https://portal.solent.ac.uk/careers/work-while-studying/campus-jobs.aspx" target="_blank">Campus Jobs</a></li>
+			<li><a class="footer__item nav__item" href="http://portal.solent.ac.uk/careers/cv-apps-socialmedia/get-noticed.aspx" target="_blank">CV Help</a></li>
+			<li><a class="footer__item nav__item" href="http://portal.solent.ac.uk/careers/work-placements/work-placements.aspx" target="_blank">Placements</a></li>
+			<li><a class="footer__item nav__item" href="http://portal.solent.ac.uk/careers/essential-info/events/events-listing.aspx" target="_blank">Events &amp; Workshops</a></li>
+		</ul>
+	</div>
+</div>
+</div>
+
+<div class="footer--bottom">
+	<div class="container footer_bottom">
+		<div class="row">
+			<div class="col-lg-8 col-sm-12">
+				<a class="footer__item nav__item" href="https://www.solent.ac.uk/disclaimer" target="_blank">Disclaimer</a>&nbsp&nbsp
+				<a class="footer__item nav__item" href="https://learn.solent.ac.uk/terms">Terms &amp; Conditions</a>&nbsp&nbsp
+				<a class="footer__item nav__item" href="http://portal.solent.ac.uk/disclaimer/cookies-online-learning-systems.aspx" target="_blank">Cookies</a>&nbsp&nbsp
+				<a class="footer__item nav__item" href="http://www.solent.ac.uk/accessibility/accessibility.aspx" target="_blank">Accessibility</a>&nbsp&nbsp
+				<br><br>
+				<p class="footer__copyright">© Solent University</p>
+			</div>
+			<div class="col-lg-4 col-sm-12">
+				<nav class="nav">
+					<ul class="menu social-wrap">
+						<!-- Images hosted SOL -->
+						<li><a class="social twitter" href="https://twitter.com/solentuni" target="_blank"></a></li>
+						<li><a class="social facebook" href="https://www.facebook.com/solentuniversity" target="_blank"></a></li>
+						<li><a class="social youtube" href="https://www.youtube.com/user/SolentUniOfficial" target="_blank"></a></li>
+						<li><a class="social linkedin" href="https://www.linkedin.com/edu/southampton-solent-university-12644" target="_blank"></a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+
+    </div>
+</footer>

@@ -1,0 +1,346 @@
+
+
+
+body {
+  background-color: #f4f4f4 !important;
+}
+
+/* Site name on top left */
+span.site-name.d-none.d-md-inline {
+  color: #333;
+  margin-left: 0;
+  margin-top: 10px;
+  font-size: 28px;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+}
+
+/* Make site name smaller on small screens */
+@media (max-width: 500px) {
+  span.site-name.d-none.d-md-inline {
+    font-size: 14px;
+  }
+
+  .frontpage_img {
+    display: none;
+  }
+}
+
+/* increase size of navbar */
+.navbar {
+  min-height: 80px;
+}
+
+/* Adds space between page header buttons and the main content on mobile  */
+@media (max-width: 480px) {
+
+  #page-header .singlebutton {
+      margin-bottom: 15px;
+  }
+}
+
+
+/* registration page form */
+.form-control {
+    min-width: 60% !important;
+}
+
+/* search input bar  */
+input.form-control {
+    display: inline;
+    border-color: #E9ECEF;
+}
+
+/* search submit button  */
+.search-input-form input#id_submitbutton {
+    margin-bottom: 4px;
+}
+
+a#dropdown-3 {
+    color: black;
+}
+
+a#dropdown-0 {
+    background: none;
+    margin: 0;
+}
+
+span.currentlink {
+    color: #bebebe !important;
+}
+
+.dropdown-item a {
+    color: white !important ;
+}
+
+a.dropdown-underline:hover::before, span.usertext:hover::before{
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.navbar-dropdown {
+  right: 0;
+  left: auto;
+  margin-top: 0;
+}
+
+.dropdown-underline {
+    margin-top: 20px;
+}
+
+#nav-drawer {
+  padding-top: 50px;
+  background-color: white;
+}
+
+.message-drawer {
+    margin-top: 30px;
+}
+
+/*fixes positioning of the search button on forums  */
+button#searchforums {
+    margin-left: 28px;
+}
+
+/* remove site home link */
+[data-key='home'] {
+  display: none;
+}
+
+/* increase size of site name on top left */
+.has-logo.img {
+  min-height: 70px;
+}
+
+/* move the main page content out the way of the bigger navbar */
+#page-header {
+  margin-top: 80px;
+}
+
+/* the main content should always fully overlap the footer */
+div#region-main-box {
+    min-height: -webkit-fill-available !important;
+    min-height: 1002px;
+}
+
+.footer_list {
+  list-style-type: none;
+}
+
+h3.footer__title.footer__item.nav__item.footer_list {
+    letter-spacing: 0.25em;
+    font-size: 1.3rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+@media (min-width: 480px) {
+    footer#page-footer {
+      padding-top: 50px !important;
+    }
+}
+
+.footer_links {
+  min-width: 100%;
+  padding: 0;
+}
+
+p.footer__copyright {
+    float: left;
+    color: #9AA6A8;
+}
+
+span.login {
+  font-size: 1.25rem;
+}
+
+@media (max-width: 550px) {
+  span.login {
+    line-height: 1rem !important;
+    font-size: 0.8rem;
+  }
+}
+
+/* onetopic */
+a.nav-link.active div {
+    color: #495057 !important;
+}
+
+ /* Stops text on course pages on mobile being squashed */
+.no-overflow {
+  overflow: visible;
+}
+
+/* text showing username in the top right */
+.usertext {
+  color: #333333;
+  font-weight: bold;
+}
+
+#dropdown-1 {
+  color: black;
+}
+
+/* make navbar dropdown selectors pan to the right */
+ul.nav.navbar-nav.ml-auto {
+    margin-left: 0!important;
+  }
+
+ul.navbar-nav.d-none.d-md-flex {
+        margin-left: auto;
+  }
+
+/* remove extra links from the footer */
+#theme_switch_link, .logininfo, .homelink, div.sitelink, .helplink, .usertour, .tool_dataprivacy {
+  display: none;
+}
+
+.usertext:hover {
+    text-decoration: none;
+}
+
+ /* makes all hidden text grey */
+.dimmed_text span, .dimmed_text p{
+  color: #999 !important;
+}
+
+a#dropdown-1 {
+  cursor: pointer;
+}
+
+a {
+  color: #467289;
+}
+
+a:hover {
+  color: #467289;
+}
+
+div#region-main-box {
+    background-color: #f4f4f4!important;
+    z-index: 1;
+}
+
+/* footer */
+
+footer#page-footer {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 1150px) {
+  footer#page-footer {
+      position: relative;
+    }
+}
+
+@media (max-height: 750px) {
+  footer#page-footer {
+      position: relative;
+    }
+}
+
+
+.footer--bottom {
+  border-top: 1px solid #616265;
+  padding: 20px 0 20px;
+}
+
+.footer_list {
+  list-style-type: none;
+  padding: 0;
+}
+
+a.footer__item.nav__item {
+    color: #8C979E !important;
+    text-decoration: none !important;
+    line-height: 2;
+}
+
+a.footer__item.nav__item:hover {
+    color: #8C979E !important;
+    text-decoration: underline !important;
+}
+
+.twitter {
+  background-image: url("https://learn.solent.ac.uk/theme/solent2017/pix/twitter.svg");
+  background-size: 25px;
+  outline: none;
+  text-decoration: none;
+}
+
+.twitter:hover, .twitter:focus {
+  background-image: url("https://learn.solent.ac.uk/theme/solent2017/pix/twitter-dark.svg");
+  background-size: 25px;
+  background-color: #fff;
+  outline: none;
+  -webkit-transition: all .4s ease-out 0s;
+  transition: all .4s ease-out 0s;
+  text-decoration: none;
+}
+
+.facebook {
+  background-image: url("https://learn.solent.ac.uk/theme/solent2017/pix/facebook.svg");
+  background-size: 14px;
+}
+
+.facebook:hover, .facebook:focus {
+  background-image: url("https://learn.solent.ac.uk/theme/solent2017/pix/facebook-dark.svg");
+  background-size: 14px;
+  background-color: #fff;
+  outline: none;
+  -webkit-transition: all .4s ease-out 0s;
+  transition: all .4s ease-out 0s;
+  text-decoration: none;
+}
+
+.youtube {
+  background-image: url("https://learn.solent.ac.uk/theme/solent2017/pix/youtube.svg");
+  background-size: 25px;
+}
+
+.youtube:hover, .youtube:focus {
+  background-image: url("https://learn.solent.ac.uk/theme/solent2017/pix/youtube-dark.svg");
+  background-size: 25px;
+  background-color: #fff;
+  outline: none;
+  -webkit-transition: all .4s ease-out 0s;
+  transition: all .4s ease-out 0s;
+  text-decoration: none;
+}
+
+.linkedin {
+  background-image: url("https://learn.solent.ac.uk/theme/solent2017/pix/linkedin.svg");
+  background-size: 23px;
+}
+
+.linkedin:hover, .linkedin:focus {
+  background-image: url("https://learn.solent.ac.uk/theme/solent2017/pix/linkedin-dark.svg");
+  background-size: 23px;
+  background-color: #fff;
+  outline: none;
+  -webkit-transition: all .4s ease-out 0s;
+  transition: all .4s ease-out 0s;
+  text-decoration: none;
+}
+
+.social {
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: inline-block;
+  height: 44px;
+  width: 44px;
+  margin-left: 10px;
+}
+
+.social-wrap li {
+  display: inline-block;
+}
+
+ul.menu.social-wrap {
+    margin-left: auto;
+}
