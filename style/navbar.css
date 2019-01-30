@@ -33,6 +33,10 @@
     display: inherit;
   }
 
+  li.dropdown-item {
+    white-space: normal;
+  }
+
   li.dropdown.nav-item {
       height: inherit !important;
       margin: 0 !important;
