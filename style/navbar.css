@@ -96,7 +96,7 @@ input#dropdown-selector{
 }
 
 .usermenu .dropdown-menu {
-    margin-top: 21px !important;
+    margin-top: -2px !important;
 }
 
 @media (max-width: 1410px) {
@@ -311,10 +311,6 @@ span.usertext::before {
     width: calc(100% - 9px);
     display: block;
     overflow: hidden;
-}
-
-.usermenu .dropdown-menu {
-    margin-top: 21px;
 }
 
 a.dropdown-item:hover {
