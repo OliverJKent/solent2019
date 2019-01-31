@@ -7,6 +7,11 @@
     padding: 0;
 }
 
+/* Stops footer being visible behind full screen containers */
+div#page {
+    margin: 0;
+    width: 100%;
+}
 /* Fixes course overview layout on Internet Explorer */
 .courses-view-course-item {
     margin-right: 13px !important;
