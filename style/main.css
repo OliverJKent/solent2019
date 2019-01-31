@@ -3,6 +3,11 @@
     height: 130px;
 }
 
+/* Fixes font on edit buttons */
+.dropdown-toggle.icon-no-margin {
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+}
+
 body {
   background-color: #f4f4f4 !important;
 }
