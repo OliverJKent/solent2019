@@ -30,9 +30,15 @@
   margin-top: 80px;
 }
 
-/* sets text colour on tabs to white */
+/* sets colour of tabs */
 .tab_content {
     color: white;
+    background-color: #466273;
+}
+
+.tab_content:hover {
+    color: black;
+    background-color: white;
 }
 
 /* makes breadcrumbs align properly with margin  */
