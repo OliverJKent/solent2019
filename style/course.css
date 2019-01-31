@@ -30,9 +30,15 @@
   margin-top: 80px;
 }
 
-/* sets text colour on tabs to white */
+/* sets colour of tabs */
 .tab_content {
     color: white;
+    background-color: #466273;
+}
+
+.tab_content:hover {
+    color: black;
+    background-color: white;
 }
 
 /* makes breadcrumbs align properly with margin  */
@@ -100,4 +106,26 @@ a.nav-link.active div {
   .final_header_content .card {
     margin-top: 25px;
   }
+}
+
+/* Course text */
+section#region-main .editor_atto h1[style], section#region-main .editor_atto h2[style], section#region-main .editor_atto h3[style], section#region-main .editor_atto h4[style], section#region-main .editor_atto h5[style], section#region-main .editor_atto h1, section#region-main .editor_atto h2, section#region-main .editor_atto h3, section#region-main .editor_atto h4, section#region-main .editor_atto h5, section#region-main .single-section h1, section#region-main .single-section h2, section#region-main .single-section h3, section#region-main .single-section h4, section#region-main .single-section h5, section#region-main .single-section h1[style], section#region-main .single-section h2[style], section#region-main .single-section h3[style], section#region-main .single-section h4[style], section#region-main .single-section h5[style] {
+    font-family: OpenSans-Semi,"Trebuchet MS"!important;
+    font-weight: 400;
+    letter-spacing: normal!important;
+    line-height: 25px!important;
+    font-size: 20px!important;
+    padding-top: 30px!important;
+    padding-left: 0px!important;
+    margin-left: 0px!important;
+}
+
+section#region-main .editor_atto span[style*="font-size: small;"], section#region-main .editor_atto span[style*="font-size: normal;"], section#region-main .editor_atto span[style*="font-size: medium;"], section#region-main .editor_atto span[style*="font-size: large;"], section#region-main .editor_atto span[style*="font-size: x-large;"], section#region-main .editor_atto span[style*="font-style: normal;"], section#region-main .single-section span[style*="font-size: small;"], section#region-main .single-section span[style*="font-size: normal;"], section#region-main .single-section span[style*="font-size: medium;"], section#region-main .single-section span[style*="font-size: large;"], section#region-main .single-section span[style*="font-size: x-large;"], section#region-main .single-section span[style*="font-style: normal;"], section#region-main .single-section p {
+    font-family: OpenSans,"Trebuchet MS"!important;
+    font-size: 15px!important;
+    font-weight: 400;
+    letter-spacing: 0.45px!important;
+    line-height: 25px!important;
+    padding-left: 0px!important;
+    margin-left: 0px!important;
 }
