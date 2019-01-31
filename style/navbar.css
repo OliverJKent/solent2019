@@ -95,13 +95,17 @@ input#dropdown-selector{
   display: none;
 }
 
-@media (max-width: 1300px) {
+.usermenu .dropdown-menu {
+    margin-top: 21px !important;
+}
+
+@media (max-width: 1410px) {
     .navbar-brand {
       display: none !important;
     }
 }
 
-@media (min-width: 1300px) {
+@media (min-width: 1410px) {
   a.brand.shortname {
     display: none;
     }

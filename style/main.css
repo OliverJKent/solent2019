@@ -1,3 +1,7 @@
+div#page {
+    margin-top: 50px !important;
+}
+
 /* set the image size in the Solent Jobs block */
 .block_solentjobs img {
     height: 130px;

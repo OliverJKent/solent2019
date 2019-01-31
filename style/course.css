@@ -108,6 +108,15 @@ a.nav-link.active div {
   }
 }
 
+/* Moves settings menu to the correct position */
+.dropdown-menu.dropdown-menu-right.menu.align-tr-br.show {
+    transform: translate3d(0px, 24px, 0px) !important;
+}
+
+.final_header_content .col-12.pt-3.pb-3 {
+    padding-bottom: 0 !important;
+}
+
 /* Course text */
 section#region-main .editor_atto h1[style], section#region-main .editor_atto h2[style], section#region-main .editor_atto h3[style], section#region-main .editor_atto h4[style], section#region-main .editor_atto h5[style], section#region-main .editor_atto h1, section#region-main .editor_atto h2, section#region-main .editor_atto h3, section#region-main .editor_atto h4, section#region-main .editor_atto h5, section#region-main .single-section h1, section#region-main .single-section h2, section#region-main .single-section h3, section#region-main .single-section h4, section#region-main .single-section h5, section#region-main .single-section h1[style], section#region-main .single-section h2[style], section#region-main .single-section h3[style], section#region-main .single-section h4[style], section#region-main .single-section h5[style] {
     font-family: OpenSans-Semi,"Trebuchet MS"!important;
