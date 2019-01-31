@@ -134,16 +134,16 @@ class core_renderer extends \core_renderer {
             return $html;
           }
 
-        // public function breadcrumbs_ssu() {
-        //   $html = html_writer::start_tag('header', array('id' => 'page-header-crumbs', 'class' => 'clearfix'));
-        //       $html .= $this->context_header();
-        //       $html .= html_writer::start_div('clearfix', array('id' => 'page-navbar'));
-        //       $html .= html_writer::tag('div', $this->navbar(), array('class' => 'breadcrumb-nav'));
-        //   $html .= html_writer::div($this->page_heading_button(), 'breadcrumb-button');
-        //       $html .= html_writer::end_tag('header');
-        //       return $html;
-        // }
-    //SSU_AMMEND END
+        public function breadcrumbs_ssu() {
+          $html = html_writer::start_tag('header', array('id' => 'page-header-crumbs', 'class' => 'clearfix'));
+              $html .= $this->context_header();
+              $html .= html_writer::start_div('clearfix', array('id' => 'page-navbar'));
+              $html .= html_writer::tag('div', $this->navbar(), array('class' => 'breadcrumb-nav'));
+          $html .= html_writer::div($this->page_heading_button(), 'breadcrumb-button');
+              $html .= html_writer::end_tag('header');
+              return $html;
+        }
+    // SSU_AMMEND END
 
 
     /**
