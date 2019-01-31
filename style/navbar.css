@@ -297,6 +297,10 @@ span.usertext::before {
     transition: all 0.3s ease-in-out 0s;
 }
 
+.usertext {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
 .usermenu .dropdown-toggle {
     text-decoration: none;
     cursor: pointer;

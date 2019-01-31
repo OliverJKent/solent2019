@@ -1,5 +1,7 @@
-
-
+/* set the image size in the Solent Jobs block */
+.block_solentjobs img {
+    height: 130px;
+}
 
 body {
   background-color: #f4f4f4 !important;
