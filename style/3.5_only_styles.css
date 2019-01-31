@@ -12,8 +12,8 @@
     margin-right: 13px !important;
 }
 
-/* removes mobile app link from footer */
-a[href="https://download.moodle.org/mobile?version=2018051702.14&lang=en&iosappid=633359593&androidappid=com.moodle.moodlemobile"] {
+/* removes mobile app link and policies link from the footer */
+a[href="https://download.moodle.org/mobile?version=2018051701&lang=en&iosappid=633359593&androidappid=com.moodle.moodlemobile"], .policiesfooter {
     display: none;
 }
 
