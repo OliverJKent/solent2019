@@ -41,18 +41,19 @@ global $COURSE;
 //if($COURSE->format == 'onetopic' && $PAGE->pagelayout == 'course'){
 if($PAGE->pagelayout == 'course'){
 	$header = $OUTPUT->full_header_ssu();
-  $mobile_course_header = $OUTPUT->full_header();
+	$mobile_course_header = $OUTPUT->full_header();
 	// $breadcrumbs = $OUTPUT->breadcrumbs_ssu();
 }else{
 	$header = $OUTPUT->full_header();
-  $mobile_course_header = null;
+	$mobile_course_header = null;
 }
 
 
 // If in course or unit pages categories add the course title elements
 global $DB;
+$course_title_elements = "";
 if(substr($_SERVER['REQUEST_URI'], 0, 20) == '/course/view.php?id='){
-   $elements = include($CFG->dirroot.'/local/course_title_elements.php');
+   $course_title_elements = unit_descriptor_course($COURSE);
 }
 
 $sections = solent_number_of_images();
@@ -72,7 +73,7 @@ $templatecontext = [
     'header' => $header,
     'mobile_course_header' => $mobile_course_header,
     'sections' => $sections,
-    'elements' => $elements
+    'course_title_elements' => $course_title_elements
 ];
 
 $templatecontext['flatnavigation'] = $PAGE->flatnav;

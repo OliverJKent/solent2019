@@ -222,9 +222,46 @@ function solent_number_of_images(){
 					$sections .= '  <input type="hidden" name="id" value="'. $option->id .'"/>';
 					$sections .= '&nbsp;&nbsp;&nbsp;<input type="submit" value="Save">
 						            </select></label></form></fieldset></div>';
-          return $sections;
+					return $sections;
 				//}
 			}
+		}
+	}
+}
+
+	
+function unit_descriptor_course($course){
+	global $CFG;
+	require_once('../config.php');
+	require_once($CFG->libdir.'/coursecatlib.php');
+	$category = coursecat::get($course->category, IGNORE_MISSING);
+	
+	if(isset($category)){
+		$catname = strtolower('x'.$category->name);
+		$coursecode = substr($course->shortname, 0, strpos($course->shortname, "_"));
+
+		if(strpos($catname, 'unit pages') !== false){			
+			$date = html_writer::start_div('unit_start') . 'Unit runs from  ' . date('d/m/Y',$course->startdate) . ' - ' . date('d/m/Y',$course->enddate) . html_writer::end_div();
+		
+			$descriptor = $CFG->wwwroot . '/amendments/course_docs/unit_descriptors/'.$coursecode.'.doc'; //STRING TO LOCATE THE UNIT CODE .DOC
+			$descriptorx = $CFG->wwwroot . '/amendments/course_docs/unit_descriptors/'.$coursecode.'.docx'; //STRING TO LOCATE THE UNIT CODE .DOCX
+			$d = @get_headers($descriptor);
+			$x = @get_headers($descriptorx);
+
+			//CHECK IF THE FILE EXISTS
+			if ($d[0] == 'HTTP/1.1 200 OK'){
+				return $date . "<a href='".$descriptor."' class='unit_desc' target='_blank'>Unit Descriptor</a>";//IF IT DOES EXIST ADD THE LINK
+			}elseif ($x[0] == 'HTTP/1.1 200 OK'){
+				return $date . "<a href='".$descriptorx."'  class='unit_desc' target='_blank'>Unit Descriptor</a>";//IF IT DOES EXIST ADD THE LINK
+			}else{
+				return $d . $x . $date . "<span class='unit_desc'>No unit descriptor available</span>";//IF IT DOSN'T EXIST ADD ALTERNATIVE LINK
+			}
+			
+			clearstatcache();
+		}
+
+		if(strpos($catname, 'course pages') !== false){
+			return '<a href="http://learn.solent.ac.uk/mod/data/view.php?d=288&perpage=1000&search='. $course->idnumber .'&sort=0&order=ASC&advanced=0&filter=1&f_1174=&f_1175=&f_1176=&f_1177=&f_1178=&f_1179=&f_1180=&u_fn=&u_ln="  class="unit_desc" target="_blank">External Examiner Report</a>';
 		}
 	}
 }
