@@ -324,3 +324,8 @@ a.dropdown-item:hover {
 .dropdown-item:hover {
     background-color: #202020;
 }
+
+.navbar .count-container {
+    top: 0px;
+    right: -16px;
+}

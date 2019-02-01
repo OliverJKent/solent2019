@@ -135,6 +135,64 @@ section#region-main .editor_atto span[style*="font-size: small;"], section#regio
     font-weight: 400;
     letter-spacing: 0.45px!important;
     line-height: 25px!important;
-    padding-left: 0px!important;
-    margin-left: 0px!important;
+    padding-left: 0!important;
+    margin-left: 0!important;
+}
+
+div[role=main]{
+	padding-top: 15px;
+}
+
+@media (min-width: 1250px) {
+	.course-content ul.topics{
+		margin-left: 0;
+		padding: 10px 80px 10px 80px;
+	}
+}
+
+div[class^="mod-indent"]{
+	margin-left: 0px !important;
+	padding-left: 20px !important;
+}
+
+@media (max-width: 480px) {
+	div[class^="mod-indent"]{
+		padding-left: 0px !important;
+	}
+	
+	div.editor-indent{
+		margin-left :0px;
+	}
+	
+	.section .label .contentwithoutlink, .section .label .activityinstance {
+		padding-right: 0px;
+	}
+}
+
+div[class*="mod-indent-1"],
+div[class*="mod-indent-2"],
+div[class*="mod-indent-3"],
+div[class*="mod-indent-4"],
+div[class*="mod-indent-5"],
+div[class*="mod-indent-6"],
+div[class*="mod-indent-7"]
+{
+	width: 0px !important;
+}
+
+div.contentafterlink, div.activityinstance {
+    padding-left: 0px;
+}
+
+.section .activity .availabilityinfo, .section .activity .contentafterlink {
+		margin-top: 0;
+		margin-left: 20px;
+}
+
+#course-category-listings li {
+    list-style: none;
+}
+
+.dimmed_text span, .dimmed_text p{
+	color: #999 !important;
 }
