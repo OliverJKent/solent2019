@@ -161,69 +161,43 @@ function theme_solent2019_get_pre_scss($theme) {
 function solent_number_of_images(){
 	global $CFG, $COURSE,$PAGE, $USER, $DB;
 	if ($PAGE->user_is_editing()){
-// 		$i = 1;
-//     $courseformat = course_get_format($COURSE);
-//     $numsections = $courseformat->get_last_section_number();
-// //var_dump($numsections);die();
 		$oncoursepage = substr($_SERVER['REQUEST_URI'] ,1,11);
  		if ($oncoursepage == 'course/view'){
-// 			echo 	'<div class="divcoursefieldset">
-// 					<fieldset class="coursefieldset">
-// 					<form action="'. $CFG->wwwroot .'/local/add_sections_query.php" method="post">
-// 					<label for "secnumbers">Number of Weeks/Topics/Tabs:&nbsp;
-// 					<select name="secnumbers">';
-//       $i=1;
-// 			while ($i<=52) { //use system config here
-// 				   //if ($i == 0){
-// 					  // $selected = 'selected = "selected"';
-// 					//	}else{
-// 					//	$selected ='';
-// 					//	}
-// 					   echo '<option value="'.$i.'"  '.$selected.'>'.$i++.' </option>';
-// 			}
-//
-// 			echo '<input type="hidden" name="courseid" value="'. $COURSE->id .'"/>';
-// 			echo '&nbsp;&nbsp;&nbsp;<input type="submit" value ="Save">
-// 				 </select></label></form></fieldset></div>';
-
-
 			if ($COURSE->id > 1){
-				//if($COURSE->format == 'onetopic'){
-					//get current option
-					$option = $DB->get_record('theme_header', array('course' => $COURSE->id), '*');
-					$dir = dirname(__FILE__).'/pix/unit-header';
-					$files = scandir($dir);
-					array_splice($files, 0, 1);
-					array_splice($files, 0, 1);
+				//get current option
+				$option = $DB->get_record('theme_header', array('course' => $COURSE->id), '*');
+				$dir = dirname(__FILE__).'/pix/unit-header';
+				$files = scandir($dir);
+				array_splice($files, 0, 1);
+				array_splice($files, 0, 1);
 
-					$options = array();
-					foreach ($files as $k=>$v) {
-						$img = substr($v, 0, strpos($v, "."));
-						$options[$img] = $img;
-					}
+				$options = array();
+				foreach ($files as $k=>$v) {
+					$img = substr($v, 0, strpos($v, "."));
+					$options[$img] = $img;
+				}
 
-					$sections = '<div class="divcoursefieldset"><fieldset class="coursefieldset fieldsetheader">
-							 <form action="'. $CFG->wwwroot .'/theme/solent2019/set_header_image.php" method="post">
-							 <label for "opt">Select header image (<a href="/theme/solent2019/pix/unit-header/options.php" target="_blank">browse options</a>):&nbsp;
-							 <select name="opt">';
+				$sections = '<div class="divcoursefieldset"><fieldset class="coursefieldset fieldsetheader">
+							<form action="'. $CFG->wwwroot .'/theme/solent2019/set_header_image.php" method="post">
+							<label for "opt">Select header image (<a href="/theme/solent2019/pix/unit-header/options.php" target="_blank">browse options</a>):&nbsp;
+							<select name="opt">';
 
-					$sections .= '<option value="00">No image</option>';
-					foreach($options as $key=>$val){
-						if(($val != 'options') && ($val != 'succeed') && ($val != '')){
-							$sections .= '<option value="' . $key . '"';
-              if($key == $option->opt) {
-                $sections .= 'selected="selected"';
-              }
-                $sections .= '>Option ' . $val . '</option>';
+				$sections .= '<option value="00">No image</option>';
+				foreach($options as $key=>$val){
+					if(($val != 'options') && ($val != 'succeed') && ($val != '')){
+						$sections .= '<option value="' . $key . '"';
+						if($key == $option->opt) {
+							$sections .= 'selected="selected"';
 						}
+						$sections .= '>Option ' . $val . '</option>';
 					}
+				}
 
-					$sections .= '  <input type="hidden" name="course" value="'. $COURSE->id .'"/>';
-					$sections .= '  <input type="hidden" name="id" value="'. $option->id .'"/>';
-					$sections .= '&nbsp;&nbsp;&nbsp;<input type="submit" value="Save">
-						            </select></label></form></fieldset></div>';
-					return $sections;
-				//}
+				$sections .= '  <input type="hidden" name="course" value="'. $COURSE->id .'"/>';
+				$sections .= '  <input type="hidden" name="id" value="'. $option->id .'"/>';
+				$sections .= '&nbsp;&nbsp;&nbsp;<input type="submit" value="Save">
+				</select></label></form></fieldset></div>';
+				return $sections;
 			}
 		}
 	}
