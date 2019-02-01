@@ -230,7 +230,7 @@
 
 .course-content .current::before {
     content: "";
-    border-left: $brand-primary 2px solid;
+    // border-left: $brand-primary 2px solid;
     position: absolute;
     left: -$card-spacer-x;
     top: 0;
