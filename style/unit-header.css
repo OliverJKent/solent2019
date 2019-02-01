@@ -319,7 +319,11 @@ div#page-navbar-unit.optlt-helpdesk.clearfix{
     }
 
 #page-theme-solent2019-pix-unit-header-options #region-main.span8{width:100%;}
-table#header-options{width:50%; margin:auto}
+table#header-options{width:50%; margin:0}
+
+table#header-options img {
+    width: 200%;
+}
 
 @media screen and (max-width: 1699px){
 	.breadcrumb-button {

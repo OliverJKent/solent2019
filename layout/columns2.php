@@ -48,6 +48,13 @@ if($PAGE->pagelayout == 'course'){
   $mobile_course_header = null;
 }
 
+
+// If in course or unit pages categories add the course title elements
+global $DB;
+if(substr($_SERVER['REQUEST_URI'], 0, 20) == '/course/view.php?id='){
+   $elements = include($CFG->dirroot.'/local/course_title_elements.php');
+}
+
 $sections = solent_number_of_images();
 $bodyattributes = $OUTPUT->body_attributes($extraclasses);
 $blockshtml = $OUTPUT->blocks('side-pre');
@@ -64,7 +71,8 @@ $templatecontext = [
     'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
     'header' => $header,
     'mobile_course_header' => $mobile_course_header,
-    'sections' => $sections
+    'sections' => $sections,
+    'elements' => $elements
 ];
 
 $templatecontext['flatnavigation'] = $PAGE->flatnav;
