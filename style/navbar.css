@@ -328,4 +328,9 @@ a.dropdown-item:hover {
 .navbar .count-container {
     top: 0px;
     right: -16px;
+	background-color: #e20613;
+    font-size: 11px;
+    min-width: 10px;
+    text-align: center;
+    font-weight: 600;
 }
