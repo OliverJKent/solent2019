@@ -1,3 +1,31 @@
+@font-face {
+  font-family: "OpenSans";
+  src: url([[font:theme|OpenSans.eot]]);
+  src: url([[font:theme|OpenSans.eot]]) format('embedded-opentype'),
+  url([[font:theme|OpenSans.woff]]) format('woff'),
+  url([[font:theme|OpenSans.ttf]]) format('truetype');
+
+}
+
+@font-face {
+  font-family: "OpenSans-Semi";
+  src: url([[font:theme|OpenSans-Semibold.eot]]);
+  src: url([[font:theme|OpenSans-Semibold.eot]]) format('embedded-opentype'),
+  url([[font:theme|OpenSans-Semibold.woff]]) format('woff'),
+  url([[font:theme|OpenSans-Semibold.ttf]]) format('truetype');
+}
+
+body{
+	margin:0;
+	font-family: OpenSans, "Trebuchet MS";
+	font-size:15px;
+	letter-spacing: 0.45px;
+	line-height:20px;
+	color:#333;
+	background-color: #f4f4f4 !important;
+	background: #f4f4f4 !important;
+}
+
 div#page {
     margin-top: 50px !important;
 }
@@ -13,9 +41,9 @@ div#page {
     cursor: pointer;
 }
 
-body {
-  background-color: #f4f4f4 !important;
-}
+/* body { */
+  /* background-color: #f4f4f4 !important; */
+/* } */
 
 /* Site name on top left */
 span.site-name.d-none.d-md-inline {
