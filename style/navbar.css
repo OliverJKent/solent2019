@@ -99,13 +99,13 @@ input#dropdown-selector{
     margin-top: -2px !important;
 }
 
-@media (max-width: 1410px) {
+@media (max-width: 1435px) {
     .navbar-brand {
       display: none !important;
     }
 }
 
-@media (min-width: 1410px) {
+@media (min-width: 1435px) {
   a.brand.shortname {
     display: none;
     }
