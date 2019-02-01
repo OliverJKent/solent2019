@@ -266,6 +266,10 @@ a.nav-link.dropdown-underline {
     display: block;
 }
 
+ul.dropdown-menu {
+    margin-top: 0px !important;
+}
+
 .dropdown-toggle.nav-link {
     padding: 0 !important
 }
