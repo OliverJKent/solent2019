@@ -113,6 +113,11 @@ a.nav-link.active div {
     transform: translate3d(0px, 24px, 0px) !important;
 }
 
+.form-inline label {
+    justify-content: normal !important;
+
+  }
+
 .final_header_content .col-12.pt-3.pb-3 {
     padding-bottom: 0 !important;
 }
