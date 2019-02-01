@@ -245,12 +245,26 @@ class core_renderer extends \core_renderer {
      * always shown, even if no menu items are configured in the global
      * theme settings page.
      */
-    public function custom_menu($custommenuitems = '') {
-        global $CFG;
-
+	public function custom_menu($custommenuitems = '') {
+        global $CFG, $DB, $USER;
         if (empty($custommenuitems) && !empty($CFG->custommenuitems)) {
             $custommenuitems = $CFG->custommenuitems;
         }
+
+		if(isloggedin() && !isguestuser()){
+			$bookmarks = $DB->get_records_sql('SELECT * FROM {mybookmarks} WHERE user = ? ORDER BY sort_order ASC', array($USER->id));
+			$mycourses = "	-Bookmarks|
+							-Bookmark this page|/local/mybookmarks/addbookmark.php
+							-Manage my bookmarks|/local/mybookmarks/manage.php
+			";
+
+			foreach($bookmarks as $k=>$v){
+				$mycourses .= "-" . $v->bookmark_name . "|" . $v->url ."
+				"; // This MUST be on a new line otherwise the menu messes up
+			}
+			$custommenuitems =  $mycourses . $custommenuitems;
+		}
+
         $custommenu = new custom_menu($custommenuitems, current_language());
         return $this->render_custom_menu($custommenu);
     }
