@@ -248,6 +248,12 @@ footer#page-footer {
     }
 }
 
+@media (min-width: 769px) {
+.local-fullscreen.float {
+  top: 85px;
+  }
+}
+
 @media (max-height: 750px) {
   footer#page-footer {
       position: relative;
