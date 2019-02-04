@@ -116,7 +116,12 @@ a.nav-link.active div {
 .form-inline label {
     justify-content: normal !important;
 
-  }
+}
+
+/* Stops the icon for adding sections being partially covered up  */
+a.add-sections {
+    padding-left: 5px;
+}
 
 .final_header_content .col-12.pt-3.pb-3 {
     padding-bottom: 0 !important;

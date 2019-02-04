@@ -282,6 +282,20 @@ footer#page-footer {
     }
 }
 
+/* Removes padding from course overview buttons */
+ul.nav.nav-pills.my-5 {
+    padding: 0;
+}
+
+ul.nav.nav-tabs {
+    padding: 0;
+}
+
+/* Makes the dropdown options bigger */
+li.dropdown-item, a.dropdown-item.dropdown-toggle {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
 
 .footer--bottom {
   border-top: 1px solid #616265;
