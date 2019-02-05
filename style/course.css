@@ -30,6 +30,11 @@
   margin-top: 80px;
 }
 
+/* Improves layout of course participants page */
+span.initialbarlabel.mr-2 {
+    width: 90px;
+}
+
 /* sets colour of tabs */
 .tab_content {
     color: white;
