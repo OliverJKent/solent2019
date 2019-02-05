@@ -1,322 +1,256 @@
 /* Media CSS
 -------------------------*/
-div#page-navbar-unit{
+
+/* #page-header { */
+    /* margin-top: 80px; */
+	/* min-height: 250px; */
+/* } */
+
+header#page-header.header-image{
 	min-height: 250px;
-	margin-top: 30px;
-	margin-bottom: 10px;
+	margin-top: 80px;
+	margin-bottom: 20px;
 	margin-right: -12px;
 	margin-left: -15px;
-	background-repeat: no-repeat;
-	box-shadow: inset 0px -7px 14px -14px black;
 }
 
-div#page-navbar-unit.opt00.clearfix{
+header#page-header.header-image .breadcrumb {
+	background: rgba(255, 255, 255, 0.5);
+	margin-top: 180px;
+}
+
+#page-header .card-body, #page-header .card {
+    background: transparent !important;
+}
+
+div#page-header.opt00{
 	background-color: #EAEAEA;
 }
-div#page-navbar-unit.opt01.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/01.png");
-
-	background-color: #EAEAEA;
+header#page-header.opt01{
+	background-image: url("../..../../../solent2019/pix/unit-header/01.png");
 }
 
-div#page-navbar-unit.opt02.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/02.png");
-
-	background-color: #EAEAEA;
+header#page-header.opt02{
+	background-image: url("../../../solent2019/pix/unit-header/02.png");
 }
-div#page-navbar-unit.opt03.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/03.png");
-
-	background-color: #EAEAEA;
+header#page-header.opt03{
+	background-image: url("../../../solent2019/pix/unit-header/03.png");
 }
-div#page-navbar-unit.opt04.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/04.png");
-
-	background-color: #EAEAEA;
+header#page-header.opt04{
+	background-image: url("../../../solent2019/pix/unit-header/04.png");
 }
-div#page-navbar-unit.opt05.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/05.png");
-
-	background-color: #EAEAEA;
+header#page-header.opt05{
+	background-image: url("../../../solent2019/pix/unit-header/05.png");
 }
-div#page-navbar-unit.opt06.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/06.png");
-
-	background-color: #EAEAEA;
+header#page-header.opt06{
+	background-image: url("../../../solent2019/pix/unit-header/06.png");
 }
-div#page-navbar-unit.opt07.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/07.png");
-
-	background-color: #EAEAEA;
+header#page-header.opt07{
+	background-image: url("../../../solent2019/pix/unit-header/07.png");
 }
-div#page-navbar-unit.opt08.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/08.png");
-
-	background-color: #EAEAEA;
-}div#page-navbar-unit.opt09.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/09.png");
-
-	background-color: #EAEAEA;
+header#page-header.opt08{
+	background-image: url("../../../solent2019/pix/unit-header/08.png");
 }
-div#page-navbar-unit.opt10.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/10.png");
-
-	background-color: #EAEAEA;
+header#page-header.opt09{
+	background-image: url("../../../solent2019/pix/unit-header/09.png");
 }
-div#page-navbar-unit.opt11.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/11.png");
-
-	background-color: #EAEAEA;
+header#page-header.opt10{
+	background-image: url("..../../../solent2019/pix/unit-header/10.png");
 }
-div#page-navbar-unit.opt12.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/12.png");
-
-	background-color: #EAEAEA;
+header#page-header.opt11{
+	background-image: url("../../../solent2019/pix/unit-header/11.png");
 }
-div#page-navbar-unit.opt13.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/13.png");
-
-	background-color: #EAEAEA;
+header#page-header.opt12{
+	background-image: url("../../../solent2019/pix/unit-header/12.png");
 }
-div#page-navbar-unit.opt14.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/14.png");
-
-	background-color: #3A3B3F;
+header#page-header.opt13{
+	background-image: url("../../../solent2019/pix/unit-header/13.png");
 }
-div#page-navbar-unit.opt15.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/15.png");
-
-	background-color: #3A3B3F;
+header#page-header.opt14{
+	background-image: url("../../../solent2019/pix/unit-header/14.png");
 }
-div#page-navbar-unit.opt16.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/16.png");
-
-	background-color: #3A3B3F;
+header#page-header.opt15{
+	background-image: url("../../../solent2019/pix/unit-header/15.png");
 }
-div#page-navbar-unit.opt17.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/17.png");
-
-	background-color: #3A3B3F;
+header#page-header.opt16{
+	background-image: url("../../../solent2019/pix/unit-header/16.png");
 }
-div#page-navbar-unit.opt18.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/18.png");
-
-	background-color: #3A3B3F;
+header#page-header.opt17{
+	background-image: url("../../../solent2019/pix/unit-header/17.png");
 }
-div#page-navbar-unit.opt19.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/19.png");
-
-	background-color: #3A3B3F;
+header#page-header.opt18{
+	background-image: url("../../../solent2019/pix/unit-header/18.png");
 }
-div#page-navbar-unit.opt20.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/20.png");
-
-	background-color: #3A3B3F;
+header#page-header.opt19{
+	background-image: url("../../../solent2019/pix/unit-header/19.png");
 }
-div#page-navbar-unit.opt21.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/21.png");
-
-	background-color: #3A3B3F;
+header#page-header.opt20{
+	background-image: url("../../../solent2019/pix/unit-header/20.png");
 }
-div#page-navbar-unit.opt22.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/22.png");
-
-	background-color: #3A3B3F;
+header#page-header.opt21{
+	background-image: url("../../../solent2019/pix/unit-header/21.png");
 }
-div#page-navbar-unit.opt23.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/23.png");
-
-	background-color: #3A3B3F;
+header#page-header.opt22{
+	background-image: url("../../../solent2019/pix/unit-header/22.png");
 }
-div#page-navbar-unit.opt24.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/24.png");
-
-	background-color: #3A3B3F;
+header#page-header.opt23{
+	background-image: url("../../../solent2019/pix/unit-header/23.png");
 }
-div#page-navbar-unit.opt25.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/25.png");
-
-	background-color: #3A3B3F;
+header#page-header.opt24{
+	background-image: url("../../../solent2019/pix/unit-header/24.png");
 }
-div#page-navbar-unit.opt26.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/26.png");
-
-	background-color: #3A3B3F;
+header#page-header.opt25{
+	background-image: url("../../../solent2019/pix/unit-header/25.png");
 }
-div#page-navbar-unit.opt27.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/27.png");
-
-	background-color: #3A3B3F;
+header#page-header.opt26{
+	background-image: url("../../../solent2019/pix/unit-header/26.png");
 }
-div#page-navbar-unit.opt28.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/28.png");
-
-	background-color: #3A3B3F;
+header#page-header.opt27{
+	background-image: url("../../../solent2019/pix/unit-header/27.png");
 }
-div#page-navbar-unit.opt29.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/29.png");
-
-	background-color: #3A3B3F;
+header#page-header.opt28{
+	background-image: url("../../../solent2019/pix/unit-header/28.png");
 }
-div#page-navbar-unit.opt30.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/30.png");
-
-	background-color: #3A3B3F;
+header#page-header.opt29{
+	background-image: url("../../../solent2019/pix/unit-header/29.png");
 }
-div#page-navbar-unit.opt31.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/31.png");
-
-	background-color: #3A3B3F;
+header#page-header.opt30{
+	background-image: url("../../../solent2019/pix/unit-header/30.png");
 }
-div#page-navbar-unit.opt32.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/32.png");
-
-	background-color: #3A3B3F;
+header#page-header.opt31{
+	background-image: url("../../../solent2019/pix/unit-header/31.png");
 }
-div#page-navbar-unit.opt33.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/33.png");
-
-	background-color: #3A3B3F;
+header#page-header.opt32{
+	background-image: url("../../../solent2019/pix/unit-header/32.png");
 }
-div#page-navbar-unit.opt34.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/34.png");
-
-	background-color: #3A3B3F;
+header#page-header.opt33{
+	background-image: url("../../../solent2019/pix/unit-header/33.png");
 }
-div#page-navbar-unit.opt35.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/35.png");
-
-	background-color: #3A3B3F;
+header#page-header.opt34{
+	background-image: url("../../../solent2019/pix/unit-header/34.png");
 }
-div#page-navbar-unit.opt36.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/36.png");
-
-	background-color: #3A3B3F;
+header#page-header.opt35{
+	background-image: url("../../../solent2019/pix/unit-header/35.png");
+}
+header#page-header.opt36{
+	background-image: url("../../../solent2019/pix/unit-header/36.png");
 }
 /* Images */
-div#page-navbar-unit.opt50.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/50.png");
+header#page-header.opt50{
+	background-image: url("../../../solent2019/pix/unit-header/50.png");
+}
+header#page-header.opt51{
+	background-image: url("../../../solent2019/pix/unit-header/51.png");
+}
+header#page-header.opt52{
+	background-image: url("../../../solent2019/pix/unit-header/52.png");
+}
+header#page-header.opt53{
+	background-image: url("../../../solent2019/pix/unit-header/53.png");
+}
+header#page-header.opt54{
+	background-image: url("../../../solent2019/pix/unit-header/54.png");
+}
+header#page-header.opt55{
+	background-image: url("../../../solent2019/pix/unit-header/55.png");
+}
+header#page-header.opt56{
+	background-image: url("../../../solent2019/pix/unit-header/56.png");
+}
+header#page-header.opt57{
+	background-image: url("../../../solent2019/pix/unit-header/57.png");
+}
+header#page-header.opt58{
+	background-image: url("../../../solent2019/pix/unit-header/58.png");
+}
+header#page-header.opt59{
+	background-image: url("../../../solent2019/pix/unit-header/59.png");
+}
+header#page-header.opt60{
+	background-image: url("../../../solent2019/pix/unit-header/60.png");
+}
+header#page-header.opt61{
+	background-image: url("../../../solent2019/pix/unit-header/61.png");
+}
+header#page-header.opt62{
+	background-image: url("../../../solent2019/pix/unit-header/62.png");
+}
+header#page-header.opt63{
+	background-image: url("../../../solent2019/pix/unit-header/63.png");
+}
+header#page-header.opt64{
+	background-image: url("../../../solent2019/pix/unit-header/64.png");
+}
+header#page-header.opt65{
+	background-image: url("../../../solent2019/pix/unit-header/65.png");
+}
+header#page-header.opt66{
+	background-image: url("../../../solent2019/pix/unit-header/66.png");
+}
+header#page-header.opt67{
+	background-image: url("../../../solent2019/pix/unit-header/67.png");
+}
+header#page-header.opt68{
+	background-image: url("../../../solent2019/pix/unit-header/68.png");
+}
+header#page-header.opt69{
+	background-image: url("../../../solent2019/pix/unit-header/69.png");
+}
+header#page-header.opt70{
+	background-image: url("../../../solent2019/pix/unit-header/70.png");
+}
+header#page-header.opt71{
+	background-image: url("../../../solent2019/pix/unit-header/71.png");
+}
+header#page-header.opt72{
+	background-image: url("../../../solent2019/pix/unit-header/72.png");
+}
+header#page-header.opt73{
+	background-image: url("../../../solent2019/pix/unit-header/73.png");
+}
+header#page-header.opt74{
+	background-image: url("../../../solent2019/pix/unit-header/74.png");
+}
+header#page-header.opt75{
+	background-image: url("../../../solent2019/pix/unit-header/75.png");
+}
+header#page-header.opt76{
+	background-image: url("../../../solent2019/pix/unit-header/76.png");
+}
 
-    }
-div#page-navbar-unit.opt51.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/51.png");
+header#page-header.opt77{
+	background-image: url("../../../solent2019/pix/unit-header/77.png");
+}
+header#page-header.opt78{
+	background-image: url("../../../solent2019/pix/unit-header/78.png");
+}	
+header#page-header.opt79{
+	background-image: url("../../../solent2019/pix/unit-header/79.png");
+	background-position: right;
+}
+header#page-header.opt80{
+	background-image: url("../../../solent2019/pix/unit-header/80.png");
+	background-position: right;
+}
+header#page-header.opt81{
+	background-image: url("../../../solent2019/pix/unit-header/81.png");
+}
+header#page-header.opt82{
+	background-image: url("../../../solent2019/pix/unit-header/82.png");
+	background-position: right;
+}
+header#page-header.opt83{
+	background-image: url("../../../solent2019/pix/unit-header/83.png");
+}
+header#page-header.opt84{
+	background-image: url("../../../solent2019/pix/unit-header/84.png");
+	background-position: center;
+}
 
-    }
-div#page-navbar-unit.opt52.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/52.png");
+header#page-header.optlt-helpdesk{
+	background-image: url("../../../solent2019/pix/unit-header/lt-helpdesk.jpg");
 
-    }
-div#page-navbar-unit.opt53.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/53.png");
-
-    }
-div#page-navbar-unit.opt54.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/54.png");
-
-    }
-div#page-navbar-unit.opt55.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/55.png");
-
-    }
-div#page-navbar-unit.opt56.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/56.png");
-
-    }
-div#page-navbar-unit.opt57.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/57.png");
-
-    }
-div#page-navbar-unit.opt58.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/58.png");
-
-    }
-div#page-navbar-unit.opt59.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/59.png");
-
-    }
-div#page-navbar-unit.opt60.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/60.png");
-
-    }
-div#page-navbar-unit.opt61.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/61.png");
-
-    }
-div#page-navbar-unit.opt62.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/62.png");
-
-    }
-div#page-navbar-unit.opt63.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/63.png");
-
-    }
-div#page-navbar-unit.opt64.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/64.png");
-
-    }
-div#page-navbar-unit.opt65.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/65.png");
-
-    }
-div#page-navbar-unit.opt66.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/66.png");
-
-    }
-div#page-navbar-unit.opt67.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/67.png");
-
-    }
-div#page-navbar-unit.opt68.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/68.png");
-
-    }
-div#page-navbar-unit.opt69.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/69.png");
-
-    }
-div#page-navbar-unit.opt70.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/70.png");
-
-    }
-div#page-navbar-unit.opt71.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/71.png");
-
-    }
-div#page-navbar-unit.opt72.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/72.png");
-
-    }
-div#page-navbar-unit.opt73.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/73.png");
-
-    }
-div#page-navbar-unit.opt74.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/74.png");
-
-    }
-div#page-navbar-unit.opt75.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/75.png");
-
-    }
-div#page-navbar-unit.opt76.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/76.png");
-
-    }
-
-div#page-navbar-unit.opt77.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/77.png");
-
-    }
-
-div#page-navbar-unit.opt78.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/78.png");
-
-    }
-
-div#page-navbar-unit.optlt-helpdesk.clearfix{
-	background-image: url("/theme/solent2019/pix/unit-header/lt-helpdesk.jpg");
-
-    }
+}
 
 #page-theme-solent2019-pix-unit-header-options #region-main.span8{width:100%;}
 table#header-options{width:50%; margin:0}
@@ -335,12 +269,13 @@ table#header-options img {
 	display: inline-block;
     max-width: 1680px;
     color: #fff;
-	margin-top: 150px;
+	margin-top: 100px;
     line-height: 50px;
 	letter-spacing: .25em;
     text-transform: uppercase;
 	background: rgba(0,0,0,0.40);
 	padding-right: 20px;
+	position: absolute;
 }
 
 @media screen and (max-width: 1699px){
@@ -351,7 +286,7 @@ table#header-options img {
 
 @media screen and (min-width: 1700px){
 	.unit_title{
-		padding-left: 110px;
+		padding-left: 20px;
 	}
 }
 
