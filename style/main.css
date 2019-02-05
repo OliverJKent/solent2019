@@ -280,6 +280,23 @@ footer#page-footer {
 .local-fullscreen.float {
   top: 85px;
   }
+
+  /* Fullscreen button  */
+  @media (min-width: 769px) {
+  .local-fullscreen.float {
+    top: 85px;
+    }
+
+  .local-fullscreen {
+      position: absolute;
+      transform: translateX(-50px) translateY(10px);
+    }
+  }
+
+  /* Extra padding to allow space for the fullscreen button */
+  #region-main .card-body {
+      padding-right: 60px;
+  }
 }
 
 @media (max-height: 750px) {
