@@ -37,17 +37,7 @@ if ($navdraweropen) {
     $extraclasses[] = 'drawer-open-left';
 }
 
-// global $COURSE;
-//if($COURSE->format == 'onetopic' && $PAGE->pagelayout == 'course'){
-// if($PAGE->pagelayout == 'course'){
-	$header = $OUTPUT->full_header();
-// 	$mobile_course_header = $OUTPUT->full_header();
-// 	// $breadcrumbs = $OUTPUT->breadcrumbs_ssu();
-// }else{
-// 	$header = $OUTPUT->full_header();
-// 	$mobile_course_header = null;
-// }
-
+$header = $OUTPUT->full_header_ssu();
 
 // If in course or unit pages categories add the course title elements
 global $DB;

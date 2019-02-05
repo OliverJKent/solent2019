@@ -70,80 +70,103 @@ class core_renderer extends \core_renderer {
      *
      * @return string HTML to display the main header.
      */
-    public function full_header() {
-        global $PAGE;
+//SSU_AMMEND START
+    // public function full_header() {
+        // global $PAGE;
 
-        $header = new stdClass();
-        $header->settingsmenu = $this->context_header_settings_menu();
-        $header->contextheader = $this->context_header();
-        $header->hasnavbar = empty($PAGE->layout_options['nonavbar']);
-        $header->navbar = $this->navbar();
-        $header->pageheadingbutton = $this->page_heading_button();
-        $header->courseheader = $this->course_header();
-        return $this->render_from_template('theme_solent2019/header', $header);
-    }
+        // $header = new stdClass();
+        // $header->settingsmenu = $this->context_header_settings_menu();
+        // $header->contextheader = $this->context_header();
+        // $header->hasnavbar = empty($PAGE->layout_options['nonavbar']);
+        // $header->navbar = $this->navbar();
+        // $header->pageheadingbutton = $this->page_heading_button();
+        // $header->courseheader = $this->course_header();
+        // return $this->render_from_template('theme_solent2019/header', $header);
+    // }
 
-    //SSU_AMMEND START
-        public function full_header_ssu() {
-          global $COURSE, $DB, $PAGE;
-          $header = new stdClass();
+    public function full_header_ssu() {
+        global $PAGE, $DB, $COURSE, $CFG;
+		
+		$opt = $DB->get_record('theme_header', array('course' => $COURSE->id), '*');
+		if($opt){
+			$opt = $opt->opt;
+		}else{
+			$record = new stdclass;
+			$record->id = null;
+			$record->course = $COURSE->id;
 
-          $opt = $DB->get_record('theme_header', array('course' => $COURSE->id), '*');
-          if($opt){
-            $opt = $opt->opt;
-          }else{
-            $record = new stdclass;
-            $record->id = null;
-            $record->course = $COURSE->id;
+			$currentcategory = $DB->get_record('course_categories', array('id' => $COURSE->category), '*');
+			$catname = strtolower('x'.$currentcategory->name);
+			if(isset($catname)){
+				if(strpos($catname, 'course pages') !== false){
+					$record->opt = '08';
+					$DB->insert_record('theme_header', $record, $returnid=true);
+					$opt = '08';
+				}else{
+					$record->opt = '01';
+					$DB->insert_record('theme_header', $record, $returnid=true);
+					$opt = '01';
+				}
+			}
+		}
+		
+		$imageselector = '';
+		$oncoursepage = strpos($_SERVER['REQUEST_URI'], 'course/view');
+		if ($PAGE->user_is_editing() && $oncoursepage != false){			
+			if ($COURSE->id > 1){
+				$option = $DB->get_record('theme_header', array('course' => $COURSE->id), '*');
+				$dir = $CFG->dirroot . '/theme/solent2019/pix/unit-header';
+				$files = scandir($dir);
+				array_splice($files, 0, 1);
+				array_splice($files, 0, 1);
 
-            //global $CFG;
-          //  require_once($CFG->libdir.'/coursecatlib.php');
-            //require_once('/lib/coursecatlib.php');
-          //  $currentcategory = coursecat::get($COURSE->category, IGNORE_MISSING);
-          $currentcategory = $DB->get_record('course_categories', array('id' => $COURSE->category), '*');
-          $catname = strtolower('x'.$currentcategory->name);
-          if(isset($catname)){
-            if(strpos($catname, 'course pages') !== false){
-                $record->opt = '08';
-                $DB->insert_record('theme_header', $record, $returnid=true);
-                $opt = '08';
-              }else{
-                $record->opt = '01';
-                $DB->insert_record('theme_header', $record, $returnid=true);
-                $opt = '01';
-              }
-            }
-          }
+				$options = array();
+				foreach ($files as $k=>$v) {
+					$img = substr($v, 0, strpos($v, "."));
+					$options[$img] = $img;
+				}
 
-            $settings = get_config('theme_solent2019');
+				$imageselector .=	'<div class="divcoursefieldset"><fieldset class="coursefieldset fieldsetheader">
+						 <form action="'. $CFG->wwwroot .'/theme/solent2019/set_header_image.php" method="post">
+						 <label for "opt">Select header image (<a href="/theme/solent2019/pix/unit-header/options.php" target="_blank">browse options</a>):&nbsp;
+						 <select name="opt">';
 
-            $html = html_writer::start_tag('header', array('id'=>'page-header-unit', 'class'=>'clearfix'));
-            $html .= $this->context_header();
-            // if($COURSE->id == $settings->teach || $COURSE->id == $settings->succeed){
-            // $html .= html_writer::start_div('clearfix', array('id'=>'page-navbar-unit', 'class'=>'tts'));
-            // }else{
-             $html .= html_writer::start_div('clearfix', array('id'=>'page-navbar-unit', 'class'=>'opt'.$opt));
-            // }
-            $html .= html_writer::start_div('unit_title_container');
-            $coursenamearray = explode("(Start", $COURSE->fullname, 2);
-            $coursename = $coursenamearray[0];
-            $html .= html_writer::start_div('unit_title') . $coursename . html_writer::end_div();
-            $html .= html_writer::end_div();
-            $html .= html_writer::end_div();
-            $html .= html_writer::end_tag('header');
-            return $html;
-          }
+				$imageselector .= '<option value="00">No image</option>';
+				foreach($options as $key=>$val){
+					if(($val != 'options') && ($val != 'succeed') && ($val != '')){
+						$imageselector .= '<option value="' . $key . '"'; if($key == $option->opt) 
+						$imageselector .= 'selected="selected"'; 
+						$imageselector .= '>Option ' . $val . '</option>';
+					}
+				}
 
-        public function breadcrumbs_ssu() {
-          $html = html_writer::start_tag('header', array('id' => 'page-header-crumbs', 'class' => 'clearfix'));
-              $html .= $this->context_header();
-              $html .= html_writer::start_div('clearfix', array('id' => 'page-navbar'));
-              $html .= html_writer::tag('div', $this->navbar(), array('class' => 'breadcrumb-nav'));
-          $html .= html_writer::div($this->page_heading_button(), 'breadcrumb-button');
-              $html .= html_writer::end_tag('header');
-              return $html;
-        }
-    // SSU_AMMEND END
+				$imageselector .= '  <input type="hidden" name="course" value="'. $COURSE->id .'"/>';
+				$imageselector .= '  <input type="hidden" name="id" value="'. $option->id .'"/>';
+				$imageselector .= '&nbsp;&nbsp;&nbsp;<input type="submit" value="Save">
+					 </select></label></form></fieldset></div>';
+			}
+		}
+		
+		$coursenamearray = explode("(Start", $COURSE->fullname, 2);
+		$coursename = $coursenamearray[0];
+		$unittitle = html_writer::start_div('unit_title') . $coursename . html_writer::end_div();
+
+		$header = new stdClass();
+		$header->settingsmenu = $this->context_header_settings_menu();
+		$header->contextheader = $this->context_header();
+		$header->hasnavbar = empty($PAGE->layout_options['nonavbar']);
+		$header->navbar = $this->navbar();
+		$header->pageheadingbutton = $this->page_heading_button();
+		$header->courseheader = $this->course_header();
+
+		if ($oncoursepage != false && $COURSE->id > 1 ){
+			$header->imageclass = 'header-image opt'. $opt;
+			$header->coursename = $unittitle;
+			$header->imageselector = $imageselector;
+		}
+		return $this->render_from_template('theme_solent2019/header', $header);
+	}       
+// SSU_AMMEND END
 
 
     /**
@@ -301,6 +324,7 @@ class core_renderer extends \core_renderer {
         return $custommenu->export_for_template($this);
     }
 
+// SSU_AMEND START
     /*
      * This renders the bootstrap top menu.
      *
@@ -428,7 +452,7 @@ class core_renderer extends \core_renderer {
     }
     return $content;
 }
-
+// SSU_AMEND END
     /**
      * This code renders the navbar button to control the display of the custom menu
      * on smaller screens.
