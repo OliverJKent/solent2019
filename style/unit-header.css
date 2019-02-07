@@ -22,10 +22,6 @@ header#page-header.header-image .breadcrumb {
     margin-left: -15px;
 }
 
-header#page-header.header-image .breadcrumb a {
-    color: white;
-}
-
 /* Course settings dropdown menu */
 #course-header .dropdown {
     background-color: #EAEAEA;
