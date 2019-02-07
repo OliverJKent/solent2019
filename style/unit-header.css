@@ -24,7 +24,7 @@ header#page-header.header-image .breadcrumb {
 
 /* Course settings dropdown menu */
 #course-header .dropdown {
-    background-color: #EAEAEA;
+    background-color: rgba(255,255,255,.9);
     border-radius: 5px;
     padding: 5px;
 		margin-top: 0 !important;
