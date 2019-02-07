@@ -201,3 +201,8 @@ div.contentafterlink, div.activityinstance {
 .dimmed_text span, .dimmed_text p{
 	color: #999 !important;
 }
+
+.format-onetopic .tab_content.marker {
+    font-family: OpenSans-Semi;
+    font-size: initial;
+}
