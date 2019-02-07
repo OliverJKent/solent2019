@@ -14,11 +14,34 @@ header#page-header.header-image{
 	margin-left: -15px;
 }
 
+/* Breadcrumbs */
 header#page-header.header-image .breadcrumb {
     background: rgba(255,255,255,.9);
     margin-top: 180px;
     padding: 10px 10px 10px 20px;
     margin-left: -15px;
+}
+
+header#page-header.header-image .breadcrumb a {
+    color: white;
+}
+
+/* Course settings dropdown menu */
+#course-header .dropdown {
+    background-color: #EAEAEA;
+    border-radius: 5px;
+    padding: 5px;
+		margin-top: 0 !important;
+}
+
+/* stops part of the header image being hidden behind navbar  */
+.unit_title_container {
+    margin-top: 80px;
+}
+
+/* makes gear dropdown menu icon black */
+#course-header .dropdown a {
+    color: black;
 }
 
 #page-header .card-body, #page-header .card {
@@ -223,7 +246,7 @@ header#page-header.opt77{
 }
 header#page-header.opt78{
 	background-image: url("../../../solent2019/pix/unit-header/78.png");
-}	
+}
 header#page-header.opt79{
 	background-image: url("../../../solent2019/pix/unit-header/79.png");
 	background-position: right;

@@ -156,20 +156,67 @@ function theme_solent2019_get_pre_scss($theme) {
 
     return $scss;
 }
+
+// SSU_AMEND START - ADD SECTIONS DROPDOWN
+function solent_number_of_images(){
+	global $CFG, $COURSE,$PAGE, $USER, $DB;
+	if ($PAGE->user_is_editing()){
+		$oncoursepage = substr($_SERVER['REQUEST_URI'] ,1,11);
+ 		if ($oncoursepage == 'course/view'){
+			if ($COURSE->id > 1){
+				//get current option
+				$option = $DB->get_record('theme_header', array('course' => $COURSE->id), '*');
+				$dir = dirname(__FILE__).'/pix/unit-header';
+				$files = scandir($dir);
+				array_splice($files, 0, 1);
+				array_splice($files, 0, 1);
+
+				$options = array();
+				foreach ($files as $k=>$v) {
+					$img = substr($v, 0, strpos($v, "."));
+					$options[$img] = $img;
+				}
+
+				$sections = '<div class="divcoursefieldset"><fieldset class="coursefieldset fieldsetheader">
+							<form action="'. $CFG->wwwroot .'/theme/solent2019/set_header_image.php" method="post">
+							<label for "opt">Select header image (<a href="/theme/solent2019/pix/unit-header/options.php" target="_blank">browse options</a>):&nbsp;
+							<select name="opt">';
+
+				$sections .= '<option value="00">No image</option>';
+				foreach($options as $key=>$val){
+					if(($val != 'options') && ($val != 'succeed') && ($val != '')){
+						$sections .= '<option value="' . $key . '"';
+						if($key == $option->opt) {
+							$sections .= 'selected="selected"';
+						}
+						$sections .= '>Option ' . $val . '</option>';
+					}
+				}
+
+				$sections .= '  <input type="hidden" name="course" value="'. $COURSE->id .'"/>';
+				$sections .= '  <input type="hidden" name="id" value="'. $option->id .'"/>';
+				$sections .= '&nbsp;&nbsp;&nbsp;<input type="submit" value="Save">
+				</select></label></form></fieldset></div>';
+				return $sections;
+			}
+		}
+	}
+}
+
 	
 function unit_descriptor_course($course){
 	global $CFG;
 	require_once('../config.php');
 	require_once($CFG->libdir.'/coursecatlib.php');
 	$category = coursecat::get($course->category, IGNORE_MISSING);
-	
+
 	if(isset($category)){
 		$catname = strtolower('x'.$category->name);
 		$coursecode = substr($course->shortname, 0, strpos($course->shortname, "_"));
 
-		if(strpos($catname, 'unit pages') !== false){			
+		if(strpos($catname, 'unit pages') !== false){
 			$date = html_writer::start_div('unit_start') . 'Unit runs from  ' . date('d/m/Y',$course->startdate) . ' - ' . date('d/m/Y',$course->enddate) . html_writer::end_div();
-		
+
 			$descriptor = $CFG->wwwroot . '/amendments/course_docs/unit_descriptors/'.$coursecode.'.doc'; //STRING TO LOCATE THE UNIT CODE .DOC
 			$descriptorx = $CFG->wwwroot . '/amendments/course_docs/unit_descriptors/'.$coursecode.'.docx'; //STRING TO LOCATE THE UNIT CODE .DOCX
 			$d = @get_headers($descriptor);
@@ -183,7 +230,7 @@ function unit_descriptor_course($course){
 			}else{
 				return $d . $x . $date . "<span class='unit_desc'>No unit descriptor available</span>";//IF IT DOSN'T EXIST ADD ALTERNATIVE LINK
 			}
-			
+
 			clearstatcache();
 		}
 
