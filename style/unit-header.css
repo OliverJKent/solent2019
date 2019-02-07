@@ -7,7 +7,7 @@
 /* } */
 
 header#page-header.header-image{
-	min-height: 250px;
+	max-height: 250px;
 	margin-top: 80px;
 	margin-bottom: 20px;
 	margin-right: -12px;
@@ -15,8 +15,10 @@ header#page-header.header-image{
 }
 
 header#page-header.header-image .breadcrumb {
-	background: rgba(255, 255, 255, 0.5);
-	margin-top: 180px;
+    background: rgba(255,255,255,.9);
+    margin-top: 180px;
+    padding: 10px 10px 10px 20px;
+    margin-left: -15px;
 }
 
 #page-header .card-body, #page-header .card {
@@ -27,9 +29,8 @@ div#page-header.opt00{
 	background-color: #EAEAEA;
 }
 header#page-header.opt01{
-	background-image: url("../..../../../solent2019/pix/unit-header/01.png");
+	background-image: url("../../../solent2019/pix/unit-header/01.png");
 }
-
 header#page-header.opt02{
 	background-image: url("../../../solent2019/pix/unit-header/02.png");
 }
@@ -217,7 +218,6 @@ header#page-header.opt75{
 header#page-header.opt76{
 	background-image: url("../../../solent2019/pix/unit-header/76.png");
 }
-
 header#page-header.opt77{
 	background-image: url("../../../solent2019/pix/unit-header/77.png");
 }
