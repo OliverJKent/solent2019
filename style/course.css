@@ -15,16 +15,6 @@
     text-align: center;
 }
 
-/* stops part of the header image being hidden behind navbar  */
-.unit_title_container {
-    margin-top: 80px;
-}
-
-/* makes gear dropdown menu icon black */
-#course-header .dropdown a {
-    color: black;
-}
-
 /* drag and drop prompt should not be hidden behind the navbar */
 #dndupload-status {
   margin-top: 80px;
@@ -174,11 +164,11 @@ div[class^="mod-indent"]{
 	div[class^="mod-indent"]{
 		padding-left: 0px !important;
 	}
-	
+
 	div.editor-indent{
 		margin-left :0px;
 	}
-	
+
 	.section .label .contentwithoutlink, .section .label .activityinstance {
 		padding-right: 0px;
 	}
@@ -210,4 +200,9 @@ div.contentafterlink, div.activityinstance {
 
 .dimmed_text span, .dimmed_text p{
 	color: #999 !important;
+}
+
+.format-onetopic .tab_content.marker {
+    font-family: OpenSans-Semi;
+    font-size: initial;
 }

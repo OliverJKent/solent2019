@@ -209,14 +209,14 @@ function unit_descriptor_course($course){
 	require_once('../config.php');
 	require_once($CFG->libdir.'/coursecatlib.php');
 	$category = coursecat::get($course->category, IGNORE_MISSING);
-	
+
 	if(isset($category)){
 		$catname = strtolower('x'.$category->name);
 		$coursecode = substr($course->shortname, 0, strpos($course->shortname, "_"));
 
-		if(strpos($catname, 'unit pages') !== false){			
+		if(strpos($catname, 'unit pages') !== false){
 			$date = html_writer::start_div('unit_start') . 'Unit runs from  ' . date('d/m/Y',$course->startdate) . ' - ' . date('d/m/Y',$course->enddate) . html_writer::end_div();
-		
+
 			$descriptor = $CFG->wwwroot . '/amendments/course_docs/unit_descriptors/'.$coursecode.'.doc'; //STRING TO LOCATE THE UNIT CODE .DOC
 			$descriptorx = $CFG->wwwroot . '/amendments/course_docs/unit_descriptors/'.$coursecode.'.docx'; //STRING TO LOCATE THE UNIT CODE .DOCX
 			$d = @get_headers($descriptor);
@@ -230,7 +230,7 @@ function unit_descriptor_course($course){
 			}else{
 				return $d . $x . $date . "<span class='unit_desc'>No unit descriptor available</span>";//IF IT DOSN'T EXIST ADD ALTERNATIVE LINK
 			}
-			
+
 			clearstatcache();
 		}
 
@@ -239,5 +239,4 @@ function unit_descriptor_course($course){
 		}
 	}
 }
-
 // SSU_AMEND END

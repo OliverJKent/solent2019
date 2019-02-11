@@ -37,17 +37,7 @@ if ($navdraweropen) {
     $extraclasses[] = 'drawer-open-left';
 }
 
-global $COURSE;
-//if($COURSE->format == 'onetopic' && $PAGE->pagelayout == 'course'){
-if($PAGE->pagelayout == 'course'){
-	$header = $OUTPUT->full_header_ssu();
-	$mobile_course_header = $OUTPUT->full_header();
-	// $breadcrumbs = $OUTPUT->breadcrumbs_ssu();
-}else{
-	$header = $OUTPUT->full_header();
-	$mobile_course_header = null;
-}
-
+$header = $OUTPUT->full_header_ssu();
 
 // If in course or unit pages categories add the course title elements
 global $DB;
@@ -56,7 +46,6 @@ if(substr($_SERVER['REQUEST_URI'], 0, 20) == '/course/view.php?id='){
    $course_title_elements = unit_descriptor_course($COURSE);
 }
 
-$sections = solent_number_of_images();
 $bodyattributes = $OUTPUT->body_attributes($extraclasses);
 $blockshtml = $OUTPUT->blocks('side-pre');
 $hasblocks = strpos($blockshtml, 'data-block=') !== false;
@@ -71,8 +60,6 @@ $templatecontext = [
     'regionmainsettingsmenu' => $regionmainsettingsmenu,
     'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
     'header' => $header,
-    'mobile_course_header' => $mobile_course_header,
-    'sections' => $sections,
     'course_title_elements' => $course_title_elements
 ];
 

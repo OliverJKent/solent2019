@@ -421,3 +421,12 @@ a.footer__item.nav__item:hover {
 ul.menu.social-wrap {
     margin-left: auto;
 }
+
+a:focus{
+	outline: none;
+}
+
+.font-weight-bold {
+    font-family: OpenSans-Semi;
+    font-size: initial;
+}
