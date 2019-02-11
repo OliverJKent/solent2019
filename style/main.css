@@ -330,6 +330,11 @@ li.dropdown-item, a.dropdown-item.dropdown-toggle {
   padding: 0;
 }
 
+#page-footer a {
+    color: #a5a5a5;
+    text-decoration: none;
+}
+
 a.footer__item.nav__item {
     color: #8C979E !important;
     text-decoration: none !important;
