@@ -294,10 +294,9 @@ footer#page-footer {
   }
 
   /* Extra padding to allow space for the fullscreen button */
-  #region-main .card-body {
+  #region-main>.card>.card-body {
       padding-right: 60px;
   }
-}
 
 @media (max-height: 750px) {
   footer#page-footer {

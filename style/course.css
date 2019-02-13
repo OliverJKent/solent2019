@@ -206,3 +206,16 @@ div.contentafterlink, div.activityinstance {
     font-family: OpenSans-Semi;
     font-size: initial;
 }
+
+/* Buttons on the course participants page */
+.buttons .btn-group .btn {
+    margin-left: 20px;
+    margin-bottom: 30px;
+}
+
+.buttons .btn-link {
+    margin-left: 20px;
+}
+
+.m-b-1, .m-y-1 {
+    margin-right: 47px;
