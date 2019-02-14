@@ -30,7 +30,27 @@ div#page {
     margin-top: 50px !important;
 }
 
-/* set the image size in the Solent Jobs block */
+/* Overide the styles for this div so that the fullscreen button is positioned in the top right */
+#page-header .d-flex.flex-wrap {
+    display: block !important;
+}
+
+/* On the dashboard, position the 'Customise this page' button next to the fullscreen button */
+.d-flex.flex-wrap > div.ml-auto.d-flex {
+    display: block !important;
+}
+
+/* Related to above ^ */
+#page-header .singlebutton {
+    float: right;
+}
+
+/* Fixes issue where fullscren button was transparent after being clicked */
+.fullscreenmode .local-fullscreen {
+    background-color: #fefefe;
+}
+
+/* limit the image size in the Solent Jobs block to stop it breaking the layout */
 .block_solentjobs img {
     width: 100%;
 }
@@ -40,10 +60,6 @@ div#page {
     font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
     cursor: pointer;
 }
-
-/* body { */
-  /* background-color: #f4f4f4 !important; */
-/* } */
 
 /* Site name on top left */
 span.site-name.d-none.d-md-inline {
@@ -275,28 +291,6 @@ footer#page-footer {
       position: relative;
     }
 }
-
-@media (min-width: 769px) {
-.local-fullscreen.float {
-  top: 85px;
-  }
-
-  /* Fullscreen button  */
-  @media (min-width: 769px) {
-  .local-fullscreen.float {
-    top: 85px;
-    }
-
-  .local-fullscreen {
-      position: absolute;
-      transform: translateX(-50px) translateY(10px);
-    }
-  }
-
-  /* Extra padding to allow space for the fullscreen button */
-  #region-main>.card>.card-body {
-      padding-right: 60px;
-  }
 
 @media (max-height: 750px) {
   footer#page-footer {

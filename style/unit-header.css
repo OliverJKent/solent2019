@@ -20,6 +20,7 @@ header#page-header.header-image .breadcrumb {
     margin-top: 180px;
     padding: 10px 10px 10px 20px;
     margin-left: -15px;
+		float: left;
 }
 
 /* Course settings dropdown menu */
