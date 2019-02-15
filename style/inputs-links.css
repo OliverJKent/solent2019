@@ -1,0 +1,211 @@
+/* buttons-links CSS
+-------------------------*/
+/* a, a:hover, a:active, a:focus{ */
+   /* outline: 0; */
+/* } */
+
+/* a.dimmed{ */
+	/* color: #a8a8a8 !important; */
+/* } */
+
+/* .course_titlec a:link, */
+/* .course_titlec a:visited, */
+/* .course_titlec a:hover, */
+/* .course_titlec a:focus, */
+/* .course_titlec a:active{ */
+	/* /* color: #e20613; */ */
+/* } */
+
+/* .course_title_past a:link, */
+/* .course_title_past a:visited, */
+/* .course_title_past a:hover, */
+/* .course_title_past a:focus, */
+/* .course_title_past a:active{ */
+	/* /* color: #e20613; */ */
+/* } */
+
+a.btn{
+	margin-top: 9.5px;
+	border-radius: 2px !important;
+	line-height: 25px;
+	padding: 4px 12px;
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input#id_submitbutton,
+.btn, .btn-default{
+	background-color: #466273;
+	border: 1px solid #466273;
+	color: #fff;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:active,
+input[type="submit"]:focus,
+input[type="submit"].disabled,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input.form-submit[disabled],
+input[type="submit"][disabled],
+input#id_submitbutton,
+input#id_submitbutton:hover,
+input#id_submitbutton:active,
+input#id_submitbutton:focus,
+button:hover,
+button:active, button:focus,
+a.btn:hover, a.btn:active, a.btn:focus,
+input#id_submitbutton2:hover, input#id_submitbutton2:focus,
+.path-admin .buttons input[type="submit"]:hover,
+.path-admin .buttons input[type="submit"]:focus
+#notice .singlebutton+.singlebutton input,
+.btn-primary:hover,
+.btn[name="resetbutton"]:hover,
+.btn.btn-default.active,
+.btn-secondary:hover, .btn-default:hover
+{
+    color: #575757;
+    background-color: #fff;
+    border: 1px solid #466273 !important;    
+}
+
+.btn-link {
+    background-color: #fff !important;
+	border: none !important;
+}
+
+.btn-sm {
+    background-color: #fff !important;
+	border-color: #e9ecef !important;
+	color: #575757 !important;
+	
+}
+
+/* input.form-submit, */
+/* input#id_submitbutton, */
+/* input#id_submitbutton2, */
+/* .path-admin .buttons input[type="submit"], */
+/* td.submit input { */
+	/* color: #fff; */
+	/* text-decoration: none; */
+	/* background-color: #466273; */
+	/* background-image: none; */
+	/* outline: none; */
+/* } */
+
+/* p.helplink{ */
+	/* text-align: center; */
+	/* margin: 20px 0 20px 0px; */
+/* } */
+
+/* select, textarea, input[type="text"], */
+/* input[type="password"], */
+/* input[type="datetime"], */
+/* input[type="datetime-local"], */
+/* input[type="date"], */
+/* input[type="month"], */
+/* input[type="time"], */
+/* input[type="week"], */
+/* input[type="number"], */
+/* input[type="email"], */
+/* input[type="url"], */
+/* input[type="search"], */
+/* input[type="tel"], */
+/* input[type="color"], */
+/* .uneditable-input, */
+/* /* input#id_submitbutton, */ */
+/* input#id_submitbutton2 { */
+	/* font-family: inherit; */
+	/* font-size: inherit; */
+	/* letter-spacing: inherit; */
+	/* line-height:inherit; */
+    /* display: inline-block; */
+    /* padding: 4px 6px; */
+    /* margin-bottom: 10px; */
+    /* font-size: 14px; */
+    /* line-height: 25px; */
+    /* border-radius: 2px; */
+    /* vertical-align: middle; */
+/* } */
+
+/* select, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input { */
+    /* height: 25px; */
+/* } */
+
+/* input[id$="_clearbutton"][disabled], input[type="reset"][disabled] { */
+    /* border-color: #f89406; */
+/* } */
+
+/* input[id$="_clearbutton"][disabled]:hover, input[type="reset"][disabled]:hover, */
+/* input[id$="_clearbutton"][disabled]:focus, input[type="reset"][disabled]:focus { */
+    /* background-color: #fff; */
+	/* color: #575757; */
+/* } */
+
+/* select{ */
+	/* height:35px; */
+/* } */
+
+/* .messaging-area-container .messaging-area .messages-area .messages .message .content { */
+    /* font-size: inherit; */
+/* } */
+
+/* .messaging-area-container .messaging-area .messages-area .messages .blocktime { */
+    /* font-size: inherit; */
+/* } */
+
+/* input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus, input[type="submit"].disabled, input[type="button"]:focus, input[type="reset"]:focus, input.form-submit[disabled], input[type="submit"][disabled], input#id_submitbutton:hover, input#id_submitbutton:active, input#id_submitbutton:focus, button:hover, button:active, button:focus, a.btn:hover, a.btn:active, a.btn:focus, input#id_submitbutton2:hover, input#id_submitbutton2:focus, .path-admin .buttons input[type="submit"]:hover, .path-admin .buttons input[type="submit"]:focus #notice .singlebutton+.singlebutton input { */
+    /* border: none; */
+/* } */
+
+/* .btn-group>.btn+.btn { */
+    /* margin-left: 8px; */
+/* } */
+
+/* /* messaging */ */
+
+/* .messaging-area-container .messaging-area .messages-area .profile{ */
+    /* font-size: inherit; */
+/* } */
+
+/* .messaging-area-container .messaging-area .messages-area .messages-header .name-container .status { */
+    /* font-size: 14px; */
+/* } */
+
+/* .btn-link, .btn-link:hover{ */
+	/* border: none !important; */
+	/* background-color: transparent; */
+/* } */
+
+/* .messaging-area-container .btn.btn-link, .messaging-area-container .messaging-area .contacts-area .tabs .tab.selected, .messaging-area-container .messaging-area .contacts-area .tabs .tab:hover { */
+    /* color: #005E8D; */
+/* } */
+
+/* .messaging-area-container .messaging-area .messages-area .profile .actions .separator a.danger, .messaging-area-container .status .offline-text { */
+    /* color: #e20613; */
+/* } */
+
+/* p.tree_item:focus{ */
+	/* outline: none; */
+/* } */
+
+/* .page-context-header .header-button-group { */
+    /* float: none; */
+/* } */
+
+/* a#toggle-contact-button{ */
+	/* margin-left: 15px; */
+/* } */
+
+/* .path-mod-quiz #mod_quiz_navblock .qnbutton { */
+	/* border: 1px solid #bbb; */
+/* } */
+
+/* div.search-input-wrapper.nav-link{ */
+  /* display: none; */
+/* } */
+
+/* div.btn-group button:first-child{ */
+	/* border-right: 1px solid #ddd; */
+/* } */

@@ -31,9 +31,9 @@ div#page {
 }
 
 /* Overide the styles for this div so that the fullscreen button is positioned in the top right */
-#page-header .d-flex.flex-wrap {
-    display: block !important;
-}
+/* #page-header .d-flex.flex-wrap { */
+    /* display: block !important; */
+/* } */
 
 /* On the dashboard, position the 'Customise this page' button next to the fullscreen button */
 .d-flex.flex-wrap > div.ml-auto.d-flex {
@@ -48,6 +48,11 @@ div#page {
 /* Fixes issue where fullscren button was transparent after being clicked */
 .fullscreenmode .local-fullscreen {
     background-color: #fefefe;
+}
+
+/* Clear header for fullscreen button */
+.local-fullscreen.float {
+    top: 90px;
 }
 
 /* limit the image size in the Solent Jobs block to stop it breaking the layout */
@@ -428,3 +433,9 @@ a:focus{
     font-family: OpenSans-Semi;
     font-size: initial;
 }
+
+/* div[role=main]{ */
+	/* line-height: 25pt; */
+/* } */
+
+

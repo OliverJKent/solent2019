@@ -27,7 +27,7 @@ defined('MOODLE_INTERNAL') || die();
 require_once(__DIR__ . '/lib.php');
 
 $THEME->name = 'solent2019';
-$THEME->sheets = ['main', 'course', 'navbar', 'unit-header', 'course-search', '3.5_only_styles'];
+$THEME->sheets = ['main', 'course', 'navbar', 'unit-header', 'course-search', '3.5_only_styles', 'inputs-links'];
 $THEME->editor_sheets = [];
 $THEME->usefallback = true;
 $THEME->scss = function($theme) {

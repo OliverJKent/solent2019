@@ -219,3 +219,13 @@ div.contentafterlink, div.activityinstance {
 
 .m-b-1, .m-y-1 {
     margin-right: 47px;
+}
+
+.path-mod-assign [data-region="grade-panel"].fullwidth [data-region="grade"]{
+	background-color: #fff;
+	padding: 20px;
+}
+
+.path-mod-assign [data-region="grading-navigation-panel"], .path-mod-assign div.submissionstatus, .path-mod-assign [data-region="grade-actions-panel"]{
+	background-color: #fff;
+}
