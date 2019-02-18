@@ -54,7 +54,7 @@ input#id_submitbutton:hover,
 input#id_submitbutton:active,
 input#id_submitbutton:focus,
 button:hover,
-button:active, button:focus,
+button:active, /*button:focus, */
 a.btn:hover, a.btn:active, a.btn:focus,
 input#id_submitbutton2:hover, input#id_submitbutton2:focus,
 .path-admin .buttons input[type="submit"]:hover,
@@ -67,7 +67,7 @@ input#id_submitbutton2:hover, input#id_submitbutton2:focus,
 {
     color: #575757;
     background-color: #fff;
-    border: 1px solid #466273 !important;    
+    border: 1px solid #466273 !important;
 }
 
 .btn-link {
@@ -79,7 +79,7 @@ input#id_submitbutton2:hover, input#id_submitbutton2:focus,
     background-color: #fff !important;
 	border-color: #e9ecef !important;
 	color: #575757 !important;
-	
+
 }
 
 /* input.form-submit, */
