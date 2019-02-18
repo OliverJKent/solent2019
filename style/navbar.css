@@ -1,96 +1,3 @@
-/* Mobile dropdown menus */
-/* @media (max-width: 979px) {
-  .mobile-links .nav .dropdown-menu {
-      position: static !important;
-      top: auto;
-      left: auto;
-      float: none;
-      display: none;
-      max-width: none;
-      margin: 0 15px;
-      padding: 0;
-      background-color: transparent !important;
-      border: none;
-  }
-
-  .show {
-    max-height: 2000px !important;
-  }
-
-  .dropdown-item:hover, .dropdown-submenu:hover {
-    background-color: rgba(0,0,0,.125) !important;
-  }
-
-  .mobile-links .dropdown-menu {
-  display: block !important;
-  overflow: hidden;
-  max-height: 0;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-  }
-
-  .nav {
-    display: inherit;
-  }
-
-  li.dropdown-item {
-    white-space: normal;
-  }
-
-  li.dropdown.nav-item {
-      height: inherit !important;
-      margin: 0 !important;
-  }
-
-  li.dropdown-item a, li.dropdown-submenu a {
-    color: #575757!important;
-  }
-
-  a.dropdown-item, li.dropdown-submenu a {
-    background-color: transparent !important;
-    color: #575757!important;
-  }
-
-  ul.dropdown-menu {
-    transform: none !important;
-  }
-
-  a.nav-link {
-    border: 1px solid rgba(0,0,0,.125);
-    margin-top: -1px;
-  }
-
-  li.dropdown-submenu a {
-    white-space: normal;
-  }
-
-  .show {
-    background-image: none !important;
-  }
-
-  .dropdown-submenu {
-    background-image: url(https://www.solent.ac.uk/site-elements/images/icons/chevron-down-black.svg);
-    background-repeat: no-repeat;
-    background-size: 6%;
-    background-position: 100% 55%;
-  }
-
-  a.nav-link.dropdown-underline {
-    background-image: url(https://www.solent.ac.uk/site-elements/images/icons/chevron-down-black.svg);
-    background-repeat: no-repeat;
-    background-size: 6%;
-    background-position: 96% 49%;
-  }
-
-  a.dropdown-underline::before {
-    background-color: transparent !important;
-  }
-
-  .mobile-links {
-    display: block !important;
-  }
-} */
-
 input#dropdown-selector{
   display: none;
 }
@@ -111,7 +18,7 @@ input#dropdown-selector{
     }
   }
 
-@media (max-width: 850px) {
+@media (max-width: 994px) {
   .navbar .navbar-nav.d-none.d-md-flex {
     display: none !important;
   }
