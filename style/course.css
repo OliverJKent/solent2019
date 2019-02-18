@@ -24,11 +24,6 @@
   }
 }
 
-/* Allow settings dropdown and fullscreen button to be displayed next to each other */
-#page-header .d-flex.flex-wrap {
-    display: block !important;
-}
-
 .page-header-headings {
     margin-top: 30px;
     text-align: center;

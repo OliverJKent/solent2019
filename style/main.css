@@ -30,21 +30,6 @@ div#page {
     margin-top: 50px !important;
 }
 
-/* Overide the styles for this div so that the fullscreen button is positioned in the top right */
-/* #page-header .d-flex.flex-wrap { */
-    /* display: block !important; */
-/* } */
-
-/* On the dashboard, position the 'Customise this page' button next to the fullscreen button */
-.d-flex.flex-wrap > div.ml-auto.d-flex {
-    display: block !important;
-}
-
-/* Related to above ^ */
-#page-header .singlebutton {
-    float: right;
-}
-
 /* Fixes issue where fullscren button was transparent after being clicked */
 .fullscreenmode .local-fullscreen {
     background-color: #fefefe;
@@ -437,5 +422,3 @@ a:focus{
 /* div[role=main]{ */
 	/* line-height: 25pt; */
 /* } */
-
-
