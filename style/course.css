@@ -3,11 +3,30 @@
     float: right;
 }
 
-/* the standard course header should only display on small screens  */
 @media (min-width: 480px) {
   .page-context-header {
     display: none;
   }
+}
+
+/* The full header should not diplay on mobile */
+@media (max-width: 480px) {
+  .unit_title {
+    display: none !important;
+  }
+  header#page-header {
+    background-image: none !important;
+    height: auto;
+  }
+  header#page-header.header-image .breadcrumb {
+    margin-top: 0 !important;
+    background: none !important;
+  }
+}
+
+/* Allow settings dropdown and fullscreen button to be displayed next to each other */
+#page-header .d-flex.flex-wrap {
+    display: block !important;
 }
 
 .page-header-headings {
