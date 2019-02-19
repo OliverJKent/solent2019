@@ -52,6 +52,27 @@ a[href="https://download.moodle.org/mobile?version=2018051701&lang=en&iosappid=6
     color: #575757 !important;
 }
 
+.block-myoverview .justify-content-center a.nav-link.active {
+    color: #466273;
+    background-color: #fff;
+    cursor: default;
+}
+
+.block-myoverview .justify-content-center a.nav-link {
+    background-color: #466273;
+    color: #fff;
+    transition: all 0.2s;
+}
+
+.block-myoverview .justify-content-center a.nav-link:active {
+    color: #212529 !important;
+    background-color: #cbd3da !important;
+}
+
+.block-myoverview .justify-content-center a.nav-link:hover {
+    color: #466273;
+    background-color: #fff;
+}
 /* Removes profile image from dashboard */
 #page-header img.userpicture.defaultuserpic {
     display: none;
