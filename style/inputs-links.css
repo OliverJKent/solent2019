@@ -38,7 +38,7 @@ input#id_submitbutton,
 .btn, .btn-default{
 	background-color: #466273;
 	border: 1px solid #466273;
-	color: #fff !important;
+	color: #fff;
 }
 
 input[type="submit"]:hover,
