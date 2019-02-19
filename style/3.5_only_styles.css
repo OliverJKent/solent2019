@@ -43,6 +43,15 @@ a[href="https://download.moodle.org/mobile?version=2018051701&lang=en&iosappid=6
   margin-left: 0px !important;
 }
 
+/* Forces button text colours for 'view course' buttons in timeline view */
+[data-region="timeline-view"] a.btn.btn-secondary.text-primary {
+  color: white !important;
+}
+
+[data-region="timeline-view"] a.btn.btn-secondary.text-primary:hover {
+    color: #575757 !important;
+}
+
 /* Removes profile image from dashboard */
 #page-header img.userpicture.defaultuserpic {
     display: none;

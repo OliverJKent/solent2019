@@ -30,6 +30,10 @@ div#page {
     margin-top: 50px !important;
 }
 
+#page-wrapper::after {
+    background: #373A3C;
+}
+
 /* Fixes issue where fullscren button was transparent after being clicked */
 .fullscreenmode .local-fullscreen {
     background-color: #fefefe;
@@ -263,9 +267,11 @@ a:hover {
   color: #467289;
 }
 
+/* Main content should overlap footer  */
 div#region-main-box {
     background-color: #f4f4f4!important;
     z-index: 1;
+    box-shadow: 0px 13px 20px #1f1d1d;
 }
 
 /* footer */
