@@ -39,6 +39,11 @@ span.initialbarlabel.mr-2 {
     width: 90px;
 }
 
+/* Fixes layout of forum post display options  */
+.discussioncontrol {
+    margin-left: 22px;
+}
+
 /* sets colour of tabs */
 .tab_content {
     color: white;
