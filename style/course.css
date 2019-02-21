@@ -44,6 +44,11 @@ span.initialbarlabel.mr-2 {
     margin-left: 22px;
 }
 
+/* Sets alignment of dropdown menus on 'view all submissions' page */
+.dropdown-menu.menu.dropdown-menu-right.align-tl-bl.show {
+    right: unset;
+}
+
 /* sets colour of tabs */
 .tab_content {
     color: white;
