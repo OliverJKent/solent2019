@@ -86,7 +86,7 @@ class core_renderer extends \core_renderer {
 
     public function full_header_ssu() {
         global $PAGE, $DB, $COURSE, $CFG;
-		
+
 		$opt = $DB->get_record('theme_header', array('course' => $COURSE->id), '*');
 		if($opt){
 			$opt = $opt->opt;
@@ -109,10 +109,10 @@ class core_renderer extends \core_renderer {
 				}
 			}
 		}
-		
+
 		$imageselector = '';
 		$oncoursepage = strpos($_SERVER['REQUEST_URI'], 'course/view');
-		if ($PAGE->user_is_editing() && $oncoursepage != false){			
+		if ($PAGE->user_is_editing() && $oncoursepage != false){
 			if ($COURSE->id > 1){
 				$option = $DB->get_record('theme_header', array('course' => $COURSE->id), '*');
 				$dir = $CFG->dirroot . '/theme/solent2019/pix/unit-header';
@@ -134,8 +134,8 @@ class core_renderer extends \core_renderer {
 				$imageselector .= '<option value="00">No image</option>';
 				foreach($options as $key=>$val){
 					if(($val != 'options') && ($val != 'succeed') && ($val != '')){
-						$imageselector .= '<option value="' . $key . '"'; if($key == $option->opt) 
-						$imageselector .= 'selected="selected"'; 
+						$imageselector .= '<option value="' . $key . '"'; if($key == $option->opt)
+						$imageselector .= 'selected="selected"';
 						$imageselector .= '>Option ' . $val . '</option>';
 					}
 				}
@@ -146,7 +146,7 @@ class core_renderer extends \core_renderer {
 					 </select></label></form></fieldset></div>';
 			}
 		}
-		
+
 		$coursenamearray = explode("(Start", $COURSE->fullname, 2);
 		$coursename = $coursenamearray[0];
 		$unittitle = html_writer::start_div('unit_title') . $coursename . html_writer::end_div();
@@ -165,7 +165,7 @@ class core_renderer extends \core_renderer {
 			$header->imageselector = $imageselector;
 		}
 		return $this->render_from_template('theme_solent2019/header', $header);
-	}       
+	}
 // SSU_AMMEND END
 
 
@@ -779,7 +779,9 @@ class core_renderer extends \core_renderer {
 
             $this->page->navigation->initialise();
             $node = $this->page->navigation->find_active_node();
-            $buildmenu = false;
+// SSU_AMEND START Added settings menu for 'view all submissions page'
+            $buildmenu = true;
+// SSU_AMEND END
             // If the settings menu has been forced then show the menu.
             if ($this->page->is_settings_menu_forced()) {
                 $buildmenu = true;
