@@ -57,21 +57,25 @@ button:hover,
 button:active, /*button:focus, */
 a.btn:hover, a.btn:active, a.btn:focus,
 input#id_submitbutton2:hover, input#id_submitbutton2:focus,
-.path-admin .buttons input[type="submit"]:hover,
 .path-admin .buttons input[type="submit"]:focus
 #notice .singlebutton+.singlebutton input,
-.btn-primary:hover,
-.btn[name="resetbutton"]:hover,
-.btn.btn-default.active,
-.btn-secondary:hover, .btn-default:hover
+.btn.btn-default.active
 {
     color: #575757;
-    background-color: #fff;
-    border: 1px solid #466273 !important;
+    background-color: #fff;    
+}
+
+.btn-secondary:hover, .btn-default:hover,
+.btn-primary:hover,
+.btn[name="resetbutton"]:hover,
+.path-admin .buttons input[type="submit"]:hover{
+	border: 1px solid #466273 !important;
+	color: #575757;
+    background-color: #fff; 
 }
 
 .btn-link {
-    background-color: #fff !important;
+    background-color: transparent !important;
 	border: none !important;
 }
 
