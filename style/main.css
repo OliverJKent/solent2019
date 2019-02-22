@@ -35,6 +35,11 @@ div#page {
     margin-bottom: 0px !important;
 }
 
+/* Limits size of images in blocks */
+.block img {
+    max-width: 100%;
+}
+
 #page-wrapper::after {
     background: #373A3C;
 }
