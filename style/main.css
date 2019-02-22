@@ -206,13 +206,6 @@ p.footer__copyright {
     color: #9AA6A8;
 }
 
-@media (max-width: 550px) {
-  span.login {
-    line-height: 1rem !important;
-    font-size: 0.8rem;
-  }
-}
-
 /* onetopic */
 a.nav-link.active div {
     color: #495057 !important;
