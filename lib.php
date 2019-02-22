@@ -228,7 +228,7 @@ function unit_descriptor_course($course){
 			}elseif ($x[0] == 'HTTP/1.1 200 OK'){
 				return $date . "<a href='".$descriptorx."'  class='unit_desc' target='_blank'>Unit Descriptor</a>";//IF IT DOES EXIST ADD THE LINK
 			}else{
-				return $d . $x . $date . "<span class='unit_desc'>No unit descriptor available</span>";//IF IT DOSN'T EXIST ADD ALTERNATIVE LINK
+				return $date . "<span class='unit_desc'>No unit descriptor available</span>";//IF IT DOSN'T EXIST ADD ALTERNATIVE LINK
 			}
 
 			clearstatcache();
