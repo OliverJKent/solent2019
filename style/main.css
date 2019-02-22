@@ -30,6 +30,11 @@ div#page {
     margin-top: 50px !important;
 }
 
+/* Removes margin in fullscreen mode which breaks the layout */
+.fullscreenmode #page {
+    margin-bottom: 0px !important;
+}
+
 #page-wrapper::after {
     background: #373A3C;
 }
