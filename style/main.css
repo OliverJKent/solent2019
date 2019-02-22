@@ -163,6 +163,11 @@ button#searchforums {
   min-height: 70px;
 }
 
+/* Align the log in link with the navbar dropdown menus */
+nav.fixed-top.navbar.navbar-light.bg-white.navbar-expand.moodle-has-zindex {
+    line-height: 25px;
+}
+
 /* move the main page content out the way of the bigger navbar */
 #page-header {
   margin-top: 80px;
@@ -199,10 +204,6 @@ h3.footer__title.footer__item.nav__item.footer_list {
 p.footer__copyright {
     float: left;
     color: #9AA6A8;
-}
-
-span.login {
-  font-size: 1.25rem;
 }
 
 @media (max-width: 550px) {
