@@ -241,3 +241,7 @@ a.dropdown-item:hover {
     text-align: center;
     font-weight: 600;
 }
+
+ol.breadcrumb{
+	padding-top: 11px;
+}
