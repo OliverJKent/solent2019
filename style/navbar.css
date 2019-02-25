@@ -188,7 +188,7 @@ a.dropdown-underline::before {
     height: 3px;
     bottom: 25px;
     left: 8px;
-    right: 8px;
+    right: 10px;
     background-color: #e20613;
     visibility: hidden;
     -webkit-transform: scaleX(0);
@@ -201,9 +201,9 @@ span.usertext::before {
     content: "";
     position: absolute;
     height: 3px;
-    bottom: 6px;
-    left: 0px;
-    right: 67px;
+    bottom: 0;
+    left: 0;
+    right: 44px;
     background-color: #e20613;
     visibility: hidden;
     -webkit-transform: scaleX(0);
@@ -212,16 +212,21 @@ span.usertext::before {
     transition: all 0.3s ease-in-out 0s;
 }
 
-.usertext {
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+/* Remove the dropdown arrow from the user menu */
+.usermenu .dropdown-toggle::after {
+    display: none;
 }
 
-.usermenu .dropdown-toggle {
-    text-decoration: none;
-    cursor: pointer;
-    width: calc(100% - 9px);
-    display: block;
-    overflow: hidden;
+/* Remove unecessary margin from user picture */
+.usermenu img.userpicture {
+    margin-right: 0;
+}
+
+.usertext {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  height: unset !important;
+  min-height: 35px;
+  line-height: 1;
 }
 
 a.dropdown-item:hover {
