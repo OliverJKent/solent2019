@@ -19,7 +19,7 @@
 }}
 
 <!-- SSU_AMEND Set aria-label manually to prevent error output -->
-<nav class="fixed-top navbar navbar-light bg-white navbar-expand moodle-has-zindex" aria-label="Site navigation">
+<nav class="fixed-top navbar navbar-light bg-white navbar-expand moodle-has-zindex" role="navigation" aria-label="Site navigation">
 <!-- SSU_AMEND END  -->
 
         <div data-region="drawer-toggle" class="d-inline-block mr-3">
@@ -60,3 +60,27 @@
         </ul>
         <!-- search_box -->
 </nav>
+{{#js}}
+<!-- Add shadow to the navbar only after scrolling down -->
+require(['jquery'], function($) {
+
+function check_if_in_view() {
+            var nav_height = $(".navbar").height();
+            var $window = $(window);
+            var window_top_position = $window.scrollTop();
+            var header = $("nav[role='navigation']").attr('class');
+
+            if(window_top_position >= nav_height){
+                $("nav[role='navigation']").addClass("nav-border");
+              }else{
+                $("nav[role='navigation']").removeClass("nav-border");
+              }
+            }
+
+          $(document).ready(function() {
+              var $window = $(window);
+              $window.on('scroll resize', check_if_in_view);
+          });
+});
+
+{{/js}}

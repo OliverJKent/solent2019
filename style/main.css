@@ -30,6 +30,11 @@ div#page {
     margin-top: 50px !important;
 }
 
+/* Controls the shadow underneath the navbar */
+.nav-border {
+  box-shadow: 0px 6px 4px rgba(0,0,0,.08) !important;
+}
+
 /* Removes margin in fullscreen mode which breaks the layout */
 .fullscreenmode #page {
     margin-bottom: 0px !important;
