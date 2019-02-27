@@ -23,6 +23,7 @@
  */
 
 defined('MOODLE_INTERNAL') || die();
+$PAGE->requires->js_call_amd('theme_solent2019/border', 'init');
 
 $bodyattributes = $OUTPUT->body_attributes([]);
 
@@ -33,4 +34,3 @@ $templatecontext = [
 ];
 
 echo $OUTPUT->render_from_template('theme_solent2019/columns1', $templatecontext);
-

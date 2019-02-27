@@ -25,6 +25,7 @@ defined('MOODLE_INTERNAL') || die();
  */
 
 $bodyattributes = $OUTPUT->body_attributes();
+$PAGE->requires->js_call_amd('theme_solent2019/border', 'init');
 
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
@@ -33,4 +34,3 @@ $templatecontext = [
 ];
 
 echo $OUTPUT->render_from_template('theme_solent2019/login', $templatecontext);
-

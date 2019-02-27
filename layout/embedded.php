@@ -23,6 +23,7 @@
  */
 
 defined('MOODLE_INTERNAL') || die();
+$PAGE->requires->js_call_amd('theme_solent2019/border', 'init');
 
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),

@@ -23,6 +23,7 @@
  */
 
 defined('MOODLE_INTERNAL') || die();
+$PAGE->requires->js_call_amd('theme_solent2019/border', 'init');
 
 $templatecontext = [
     // We cannot pass the context to format_string, this layout can be used during

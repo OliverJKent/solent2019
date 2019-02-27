@@ -23,6 +23,7 @@
  */
 
 defined('MOODLE_INTERNAL') || die();
+$PAGE->requires->js_call_amd('theme_solent2019/border', 'init');
 
 $blockshtml = $OUTPUT->blocks('side-pre');
 $hasblocks = strpos($blockshtml, 'data-block=') !== false;
@@ -37,4 +38,3 @@ $templatecontext = [
 ];
 
 echo $OUTPUT->render_from_template('theme_solent2019/secure', $templatecontext);
-
